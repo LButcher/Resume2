@@ -1,0 +1,22 @@
+{
+  "name": "onlineresume",
+  "main": "server.js",
+  "description": "An online portfolio",
+  "version": "0.1.1",
+  "private": false,
+  "engines": {
+    "node": "6.*"
+  },
+  "scripts": {
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/LButcher/Resume2"
+  },
+  "dependencies": {
+    "body-parser": "^1.17.x",
+    "express": "^4.15.x"
+  },
+  "author": "Liam Butcher"
+}
