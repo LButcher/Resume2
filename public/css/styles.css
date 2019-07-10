@@ -1,0 +1,140 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Verdana", sans-serif;
+    font-weight: 400;
+    font-size: 100%;
+    line-height: 1.5;
+    color: #777;
+}
+
+.header {
+    height: 100vh;
+    background-image :  linear-gradient(to right bottom, 
+    rgba(126,213,111,0.8), 
+    rgba(40,180,131,0.8)), 
+    url('../img/tempBG.png');
+    background-size: cover;
+    background-position: top;
+    position: relative;
+}
+
+.header-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    text-align: center;
+}
+
+.heading-title {
+    color: white;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+    margin-bottom: 3.5rem;
+}
+
+.heading-title-main {
+    display: block;
+    font-weight: 700;
+    font-size: 4rem;
+    letter-spacing: 0.8rem;
+}
+
+.heading-title-sub {
+    display: block;
+    font-weight: 400;
+    font-size:  2rem;
+    letter-spacing: 0.8rem;
+}
+
+.btn:link,
+.btn:visited {
+    text-transform: uppercase;
+    text-decoration: none;
+    padding: 16px;
+    display: inline-block;
+    transition: all 100ms;
+}
+
+.btn:hover {
+    transform: scale(1.1);
+    box-shadow: 0 10px 20px rgba(0,0,0,.2);
+}
+
+.btn:active {
+    transition: all 30ms;
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0,0,0,.2);
+}
+
+.btn-main {
+    background-color: white;
+    color: #777;
+}
+
+nav {
+    height:4.25rem;
+}
+
+.main-nav {
+    display: block;
+    position: absolute;
+    width: 100%;
+    background-color: black;
+    text-align: center;
+}
+
+.nav-option {
+    display:inline-block;
+}
+.nav-option a{
+    display: block;
+    text-transform: uppercase;
+    text-decoration: none;
+    color: white;
+    padding: 1rem;
+    font-size: 1.5rem;
+}
+
+.nav-option a:hover {
+    color: red;
+}
+
+
+#about {
+    color: black;
+    height: auto;
+}
+
+article header {
+    display:inline-block;
+    position: relative;
+    left: 50%;
+    transform: translate(-50%,0);
+    text-align: center;
+    text-transform: uppercase;
+    backface-visibility: hidden;
+}
+.article-title{
+    font-weight: 400;
+    font-size:  2rem;
+    letter-spacing: 0.8rem;
+    width: auto;
+}
+.title-underline {
+    position: relative;
+    transform: translate(-50%,0);
+    width: 70%;
+    display: block;
+    height: 0.25rem;
+    background-color: black;
+}
+
+#about section {
+    position: relative;
+}
