@@ -5,11 +5,12 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <script src="../js/modalController.js"></script>
 
     <title>Liam Butcher Portfolio</title>
 </head>
 
-<body>
+<body id="mainBody">
 
     <header class="header">
         <div class="header-content">
@@ -73,15 +74,14 @@
                 <span class="title-underline"></span>
             </header>
             <section>
-                    <button id="cpscButton" class="btn btn-project-grid">Read More</button>
+                <div id="modal_cpscButton" class="modal"></div>
                 <div class="project-grid-container">
-
                     <div class="project-grid-row">
                         <div class="project-grid-column">
                             <div class="project-grid-item">
                                 <div class="project-grid-item-details">
                                     <img class="project-grid-img" src="../img/ProjectPreviews/bluemix-invert.jpg">
-                                    <div class="project-grid-item-overlay">            <button id="cpscButton" class="btn btn-project-grid">Read More</button>
+                                    <div class="project-grid-item-overlay">            <button id="cpscButton" onclick="gridButtonPressed(this)" class="btn btn-project-grid">Read More</button>
                                     </div>
                                 </div>
                             </div>
