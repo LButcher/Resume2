@@ -12,7 +12,8 @@ function gridButtonPressed(element) {
 }
 
 function setModal(item){
-    document.querySelector('#mainBody').style.overflow='hidden';
+    //document.querySelector('#mainBody').style.overflow='hidden';
+    //document.querySelector('html').style.position='fixed';
     let modalName = '#modal_'+item;
     modal = document.querySelector(modalName);
     modal.style.display = "block";
