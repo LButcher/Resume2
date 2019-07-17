@@ -395,20 +395,20 @@ section {
     }
 }
 
-.modal {
+.modal-container {
     display: none;
     /* Hidden by default */
     position: fixed;
     /* Stay in place */
-    z-index: 1;
+    z-index: 2;
     /* Sit on top */
     padding-top: 100px;
     /* Location of the box */
     left: 0;
     top: 0;
-    width: 100%;
+    width: 100vw;
     /* Full width */
-    height: 200%;
+    height: 100vw;
     /* Full height */
     overflow: auto;
     /* Enable scroll if needed */
@@ -418,9 +418,16 @@ section {
     /* Black w/ opacity */
 }
 
-.modal:target {
+.modal-container:target {
     opacity: 1;
     pointer-events: auto;
+}
+
+.modal-title-bar {
+    width: 100vw;
+    height: 2rem;
+    background-color: red;
+    color: white;
 }
 
 
