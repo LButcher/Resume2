@@ -1,43 +1,46 @@
 let modal = null;
+let hasEventAdded = false;
 
 function gridButtonPressed(element) {
     try {
         let btn = element.id;
-        console.log(element);
-        setModal(btn);
+        if (!hasEventAdded) {
+            document.querySelector('#main-modal').addEventListener('click', modalClicked);
+            hasEventAdded = true;
+        }
+        openModal(btn);
     } catch (e) {
         console.log(e);
     }
 }
 
-function setModal(item) {
-    //document.querySelector('#mainBody').style.overflow='hidden';
-    /* const scrollY = window.scrollY;
-     document.querySelector('body').style.position = 'fixed';
-     document.querySelector('body').style.top = scrollY + 'px';*/
+function modalClicked(event) {
+    if (event.target.id === 'main-modal') {
+        closeModal();
+    }
+}
+
+function openModal(btnName) {
+
     const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
-    //const body = document.body;
     document.querySelector('body').style.position = 'auto';
     document.querySelector('body').style.overflowY = 'scroll';
-
     const body = document.querySelector('html');
     body.style.position = 'fixed';
     body.style.top = `-${scrollY}`;
-    let modalName = '#modal_' + item;
-    modal = document.querySelector(modalName);
+
+    modal = document.querySelector('#main-modal');
     modal.style.display = "block";
     modal.focus();
-    let modalTemplate = document.querySelector('#cpscButton-template');
+    let modalTemplate = getTemplate(btnName);
     modal.innerHTML = modalTemplate.innerHTML;
-    //modal.innerHTML = '<object type="text/html" data="../views/cpsc319Modal.html"></object>'
-    //modal.innerHTML = url('/views/cpsc319Modal.html');
+
 }
 
 function closeModal() {
     //document.querySelector('#mainBody').style.overflow = 'auto';
     //const body = document.body;
     const body = document.querySelector('html');
-
     const scrollY = body.style.top;
     body.style.position = '';
     body.style.top = '';
@@ -45,14 +48,21 @@ function closeModal() {
     window.scrollTo(0, parseInt(scrollY || '0') * -1);
     document.querySelector('html').style.scrollBehavior = 'smooth';
     modal.style.display = "none";
-    modal = null;
+}
+
+function getTemplate(id) {
+    let templateName = id + '-template';
+    return document.querySelector('#' + templateName);
 }
 
 document.addEventListener('keydown', event => {
+    console.log(event);
     if (event.key == 'Escape' && modal) {
         closeModal();
     }
 })
+
+
 
 window.addEventListener('scroll', () => {
     document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
