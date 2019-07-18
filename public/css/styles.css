@@ -410,7 +410,7 @@ section {
     top: 0;
     width: 100vw;
     /* Full width */
-    height: 100vw;
+    height: 100vh;
     /* Full height */
     overflow: auto;
     /* Enable scroll if needed */
