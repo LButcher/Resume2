@@ -529,11 +529,11 @@ section {
     transform: translate(0);
 }
 
-.modal-content-img-container {
-    padding: 1rem;
+.modal-img-container {
+    padding: 0 1rem 1rem 1rem;
 }
 
-.modal-content-img-container img {
+.modal-img {
     display: block;
     margin: 0 auto;
     max-width: 100%;
