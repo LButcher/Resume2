@@ -1,3 +1,12 @@
+/* Colors:
+    Eerie Black: #171717
+    Space Cadet: #19384B
+    Celadon Green: #308299
+    Outer Space: #474747
+    Cordovan: #874039
+    Deep Saffron: #F39237
+*/
+
 * {
     margin: 0;
     padding: 0;
@@ -238,8 +247,11 @@ section {
 .project-grid-container {
     padding: 4rem;
     display: grid;
+    display: -ms-grid;
     grid-template-columns: 33.333% 33.333% 33.333%;
+    -ms-grid-template-columns: 33.333% 33.333% 33.333%;
     grid-template-rows: 50% 50%;
+    -ms-grid-template-rows: 50% 50%;
     padding: 0 0.25rem;
     padding-top: 4rem;
 }
@@ -322,6 +334,7 @@ section {
 @media only screen and (max-width: 1000px) {
     .project-grid-container {
         display: grid;
+        display: -ms-grid;
         grid-template-columns: 50% 50%;
         grid-template-rows: 33.333% 33.333% 33.333%;
         padding: 0 0.25rem;
@@ -332,6 +345,7 @@ section {
 @media only screen and (max-width: 600px) {
     .project-grid-container {
         display: grid;
+        display: -ms-grid;
         grid-template-columns: 100%;
         grid-template-rows: repeat(6, 16.67%);
         padding: 0 0.25rem;
@@ -342,6 +356,7 @@ section {
 @media only screen and (max-width: 400px) {
     .project-grid-container {
         display: grid;
+        display: -ms-grid;
         grid-template-columns: 100%;
         grid-template-rows: repeat(6, 16.67%);
         padding: 0 0.25rem;
@@ -400,11 +415,10 @@ section {
     }
 }
 
-.modal-container {
+.main-modal {
     display: none;
     position: fixed;
     z-index: 2;
-    padding-top: 12.5vh;
     /* Location of the box */
     left: 0;
     top: 0;
@@ -420,22 +434,65 @@ section {
     /* Black w/ opacity */
 }
 
-.modal-container:target {
+.main-modal:target {
     opacity: 1;
     pointer-events: auto;
 }
 
+.modal-container {
+    margin-left: 10vw;
+    margin-right: 10vw;
+    margin-top: 10vh;
+    margin-bottom: 10vh;
+    background-color: rgb(238, 238, 238);
+}
+
 .modal-header {
-    position: relative;
     width: 80vw;
     background-color: rgb(238, 238, 238);
     color: black;
+    left: 0;
+    transform: translate(0);
+    height: 6rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#imageHub {
+    background-color: #308299;
+    color: white;
+}
+
+@media only screen and (max-width: 800px) {
+    .modal-container {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: rgb(238, 238, 238);
+    }
+    .modal-header {
+        position: relative;
+        width: 100vw;
+        background-color: rgb(238, 238, 238);
+        color: black;
+        left: 0;
+        transform: translate(0);
+        text-align: center;
+    }
 }
 
 .modal-header-title {
-    display: inline-block;
-    text-transform: none;
-    padding-top: 0.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-about {
+    color: white;
+    padding: 1rem;
+    font-size: 1rem;
 }
 
 .btn-modal-close {
@@ -447,13 +504,64 @@ section {
     margin-right: 0.5rem;
 }
 
-.modal-content {
+.modal-article {
     position: relative;
     background-color: rgb(238, 238, 238);
-    height: 500px;
     width: 80vw;
-    margin-left: 10vw;
     padding: 2rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .modal-article {
+        position: relative;
+        background-color: rgb(238, 238, 238);
+        width: 100vw;
+        padding: 1rem 0 0 0;
+    }
+}
+
+.modal-section {
+    padding: 0 1rem 1rem 1rem;
+}
+
+.modal-article h3 {
+    left: 0;
+    transform: translate(0);
+}
+
+.modal-content-img-container {
+    padding: 1rem;
+}
+
+.modal-content-img-container img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+}
+
+.modal-section-content {
+    font-size: 0.75rem;
+}
+
+.modal-section-content p {
+    padding: 1rem;
+}
+
+template {
+    display: none;
+}
+
+.tile-container {
+    margin: 0.5rem;
+    display: flex;
+    justify-content: space-around;
+}
+
+.tile {
+    margin: 0.5rem;
+    position: relative;
+    color: white;
+    padding: 1rem;
 }
 
 
