@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <script src="../js/modalController.js"></script>
-
+    <script src="https://kit.fontawesome.com/10caeb9d25.js"></script>
     <title>Liam Butcher Portfolio</title>
 </head>
 
@@ -24,14 +24,16 @@
 
             </h1>
 
-            <a id="enter-btn" href="#about" class="btn btn-main">View Portfolio</a>
+            <a id="enter-btn" href="#about" class="btn btn-main">View Portfolio
+                <i class="fas fa-arrow-down"></i>
+            </a>
         </div>
 
 
     </header>
 
-    <nav>
-        <ul class="main-nav">
+    <nav class="main-nav">
+        <ul>
             <li class="nav-option">
                 <a href="#about">
                     About Me
@@ -50,6 +52,7 @@
 
         </ul>
     </nav>
+
 
     <main>
         <article id="about">
@@ -76,13 +79,11 @@
                 <div id="main-modal" class="main-modal"></div>
 
                 <!-- TEMPLATES FOR MODAL-->
+                <!-- ImageHub Template-->
                 <template id="cpscProject-template">
                     <div class="modal-container">
                         <div id="imageHub" class="modal-header">
                             <h2 class="modal-header-title">ImageHub</h2>
-                            <!--<div style="display:inline "> 
-                                <button class="btn-modal-close " onClick="closeModal()">X</button>
-                            </div>-->
                         </div>
                         <article class="modal-article">
                             <section class="modal-section">
@@ -121,7 +122,9 @@
                                 <hr class="modal-divider">
                                 <div class="modal-section-content">
                                     <p>
-                                        A couple weeks into the project we gained the following information in addition to our initial requirements:
+                                        Due to the extremely limited feedback and ambiguous initial requirements, a large portion of our research included analyzing existing successful applications with similar funtionalities. 
+                                        We started by outlining the main functions of the system to estimate what types of users we would expect as well as their main motivations in the system. This resulted in a series of paper prototypes and whiteboard mockups.
+                                        A couple weeks into the project we managed to meet with the sponsors and gain the following information:
                                     </p>
                                     <div class="tile-container">
                                         <div class="tile" style="background-color:#171717">
@@ -142,9 +145,6 @@
                                             </h3>
                                             <hr class="modal-divider">
                                             <div class="modal-section-content">
-                                                    <p>
-                                                            Due to the extremely limited feedback and ambiguous requirements, a large portion of our research included analyzing existing successful applications with similar funtionalities.
-                                                        </p>
                                                         <p>
                                                             In an attempt to solve our first problem we took inspiration from Google Drive. We believed using a directory browser and smart search feature in parallel would allow users to easily find desired photos and projects despite the immense number of uploads. Initial mock-ups involved an additional layer of filter by displaying viewed content in a table.
                                                         </p>
@@ -242,12 +242,14 @@
                     </div>
                     </div>
                 </template>
+                <!-- End ImageHub Template-->
+
                 <!-- END TEMPLATES-->
 
                 <div class="project-grid-container ">
                     <div class="project-grid-item ">
                         <div class="project-grid-item-details ">
-                            <img class="project-grid-img " src="../img/ProjectPreviews/imageHubTagScreen.jpg ">
+                            <img class="project-grid-img " src="../img/ProjectPreviews/imageHubTagScreen.png">
                             <div class="project-grid-item-overlay ">
                                 <h3>ImageHub</h3>
                                 <h4>Image Hosting/Classifying System</h4>

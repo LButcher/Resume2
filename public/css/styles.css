@@ -24,9 +24,9 @@ body {
 
 .header {
     height: 100vh;
-    background-image: linear-gradient(to right bottom, rgba(199, 218, 255, 0.8), rgba(38, 48, 72, 0.8)), url('../img/tempBG.png');
+    background-image: linear-gradient(to right bottom, rgba(60, 77, 112, 0.6), rgba(38, 48, 72, 0.6)), url('../img/tempBG.png');
     background-size: cover;
-    background-position: top;
+    background-position: center;
     position: relative;
 }
 
@@ -50,6 +50,7 @@ body {
     font-weight: 700;
     font-size: 4rem;
     letter-spacing: 0.8rem;
+    text-shadow: 0px 1px black;
 }
 
 .heading-title-sub {
@@ -57,6 +58,7 @@ body {
     font-weight: 400;
     font-size: 2rem;
     letter-spacing: 0.8rem;
+    text-shadow: 0px 1px black;
 }
 
 @media only screen and (max-width: 400px) {
@@ -81,7 +83,6 @@ body {
     display: inline-block;
     font-family: "Verdana", sans-serif;
     font-weight: 400;
-    font-size: 100%;
 }
 
 #enter-btn:link,
@@ -90,19 +91,38 @@ body {
 }
 
 #enter-btn:hover {
-    transform: scale(1.1);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
+    background-color: rgb(255, 255, 255);
+    color: black;
+    border-color: white;
 }
 
-#enter-btn:active {
-    transition: all 30ms;
-    transform: scale(1);
-    box-shadow: 0 0 0 rgba(0, 0, 0, .2);
+#enter-btn:hover i {
+    animation: arrow-slide-in 300ms;
+}
+
+@keyframes arrow-slide-in {
+    0% {
+        color: black;
+        transform: translateY(0);
+    }
+    25% {
+        transform: translateY(200%);
+        color: transparent;
+    }
+    75% {
+        color: transparent;
+        transform: translateY(-200%);
+    }
+    100% {
+        color: black;
+        transform: translateY(0);
+    }
 }
 
 .btn-main {
-    background-color: white;
-    color: #777;
+    background-color: transparent;
+    color: white;
+    border-style: solid;
 }
 
 button:focus {
@@ -149,24 +169,14 @@ button:focus {
     }
 }
 
-nav {
-    height: 4.25rem;
-    box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
-}
-
-@media only screen and (max-width: 600px) {
-    nav {
-        height: 3rem;
-        box-shadow: 0 10px 20px rgba(0, 0, 0, .2);
-    }
-}
-
 .main-nav {
+    height: 5vh;
+    z-index: 1;
     display: block;
-    position: absolute;
+    position: fixed;
+    top: 0;
     width: 100%;
-    background-color: rgb(11, 8, 22);
-    text-align: center;
+    transition: ease 200ms;
 }
 
 .nav-option {
@@ -179,7 +189,6 @@ nav {
     text-decoration: none;
     color: white;
     padding: 1rem;
-    font-size: 1.5rem;
 }
 
 @media only screen and (max-width: 600px) {

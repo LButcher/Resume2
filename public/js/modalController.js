@@ -53,15 +53,25 @@ function getTemplate(id) {
     return document.querySelector('#' + templateName);
 }
 
+function setNav() {
+    const titleY = document.querySelector('.heading-title').getBoundingClientRect().top;
+    const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+    const nav = document.querySelector('.main-nav');
+    if (parseInt(scrollY) < 800 && titleY > 20) {
+        nav.style.backgroundColor = 'transparent';
+    } else if (parseInt(scrollY) >= 800 || titleY <= 20) {
+        nav.style.backgroundColor = 'black';
+    }
+}
+
 document.addEventListener('keydown', event => {
-    console.log(event);
     if (event.key == 'Escape' && modal) {
         closeModal();
     }
 })
 
 
-
 window.addEventListener('scroll', () => {
     document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+    setNav();
 });
