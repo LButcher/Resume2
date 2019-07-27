@@ -15,7 +15,7 @@
 }
 
 body {
-    font-family: "Verdana", sans-serif;
+    font-family: "Roboto", sans-serif;
     font-weight: 400;
     font-size: 100%;
     line-height: 1.5;
@@ -106,6 +106,10 @@ body {
         transform: translateY(0);
     }
     25% {
+        transform: translateY(100%);
+        color: transparent;
+    }
+    50% {
         transform: translateY(200%);
         color: transparent;
     }
@@ -170,7 +174,7 @@ button:focus {
 }
 
 .main-nav {
-    height: 5vh;
+    height: auto;
     z-index: 1;
     display: block;
     position: fixed;
@@ -203,7 +207,7 @@ button:focus {
 }
 
 .nav-option a:hover {
-    color: rgb(39, 154, 221);
+    text-decoration: underline;
 }
 
 #about {
