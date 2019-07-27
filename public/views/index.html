@@ -25,7 +25,7 @@
 
             </h1>
 
-            <a id="enter-btn" href="#about" class="btn btn-main">View Portfolio
+            <a id="enter-btn" onclick='pageScroll(event,"about")' href="#about" class="btn btn-main">View Portfolio
                 <i class="fas fa-arrow-down"></i>
             </a>
         </div>
@@ -36,17 +36,17 @@
     <nav class="main-nav">
         <ul>
             <li id='about-option' class="nav-option">
-                <a href="#about">
+                <a id='about-link' href="#about" onclick='pageScroll(event,"about")'>
                     About Me
                 </a>
             </li>
             <li id='projects-option' class="nav-option">
-                <a href="#projects">
+                <a id='projects-link' href="#projects" onclick='pageScroll(event,"projects")'>
                     Projects
                 </a>
             </li>
             <li id='contact-option' class="nav-option">
-                <a href="#contact">
+                <a id='contact-link' href="#contact" onclick='pageScroll(event,"contact")'>
                     Contact
                 </a>
             </li>
@@ -59,6 +59,7 @@
         <article id="about">
             <header>
                 <h1 class="article-title">About Me</h1>
+                <hr>
             </header>
             <section>
                 <div class="section-text">
@@ -73,6 +74,7 @@
         <article id="projects">
             <header>
                 <h1 class="article-title">Projects</h1>
+                <hr>
             </header>
             <section>
                 <div id="main-modal" class="main-modal"></div>
@@ -116,7 +118,7 @@
                             </section>
                             <section class="modal-section">
                                 <h3>
-                                    UX Research
+                                    Research
                                 </h3>
                                 <hr class="modal-divider">
                                 <div class="modal-section-content">
@@ -140,7 +142,7 @@
                                 </section>
                                     <section class="modal-section">
                                             <h3>
-                                                UX Design
+                                                Design
                                             </h3>
                                             <hr class="modal-divider">
                                             <div class="modal-section-content">

@@ -88,6 +88,15 @@ function inTitle(scrollY, titleY) {
     return (parseInt(scrollY) < 800 && titleY > 20);
 }
 
+function pageScroll(e, targetElement) {
+    e.preventDefault();
+    const targetElementId = '#' + targetElement;
+    const elementY = document.querySelector(targetElementId).getBoundingClientRect().top;
+    const navHeight = document.querySelector('nav').getBoundingClientRect().height;
+    const scrollToY = parseInt(elementY) - navHeight;
+    window.scrollBy(0, scrollToY);
+}
+
 document.addEventListener('keydown', event => {
     if (event.key == 'Escape' && modal) {
         closeModal();

@@ -106,15 +106,19 @@ body {
         transform: translateY(0);
     }
     25% {
-        transform: translateY(100%);
-        color: transparent;
+        transform: translateY(150%);
+        color: black;
     }
-    50% {
+    26% {
         transform: translateY(200%);
         color: transparent;
     }
-    75% {
+    74% {
+        transform: translateY(-200%);
         color: transparent;
+    }
+    75% {
+        color: black;
         transform: translateY(-200%);
     }
     100% {
