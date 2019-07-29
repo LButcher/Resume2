@@ -36,8 +36,7 @@ function openModal(btnName) {
 }
 
 function closeModal() {
-    //document.querySelector('#mainBody').style.overflow = 'auto';
-    //const body = document.body;
+
     const doc = document.querySelector('html');
     const scrollY = doc.style.top;
     doc.style.position = '';
@@ -55,13 +54,13 @@ function getTemplate(id) {
 
 function setNav() {
 
-    const topMargin = 100; //20px from top of window innerheight
+    const topMargin = 150; //__px from top of window innerheight
     const nav = document.querySelector('.main-nav');
     const titleY = document.querySelector('.heading-title').getBoundingClientRect().top;
     const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
     const aboutY = document.querySelector('#about').getBoundingClientRect().top;
     const projectsY = document.querySelector('#projects').getBoundingClientRect().top;
-    //const contactY = document.querySelector('#contact').getBoundingClientRect().top;
+    const contactY = document.querySelector('#contact').getBoundingClientRect().top;
     if (inTitle(scrollY, titleY)) {
         nav.style.backgroundColor = 'transparent';
         document.querySelector('#about-option').style.textDecoration = 'none';
