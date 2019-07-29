@@ -94,12 +94,14 @@
                                 <hr class="modal-divider">
                                 <div class="modal-section-content">
                                     <p>
-                                        As part of a UBC software engineering course, a large Canadian engineering consulting firm tasked our six-person team to
+                                        As part of a UBC software engineering course, a large Canadian engineering
+                                        consulting firm tasked our six-person team to
                                         design and build a MVP capable of user-based image hosting, image editing and
                                         automatic image classification using computer vision. Admin and regular users
                                         are able to upload batches of images where they then add/edit automatic
                                         classification tags, image metadata and simple image editing. The users are then
-                                        able to publish these batches of images to the public system where other users are able to view and download.
+                                        able to publish these batches of images to the public system where other users
+                                        are able to view and download.
                                     </p>
                                 </div>
                             </section>
@@ -123,122 +125,161 @@
                                 <hr class="modal-divider">
                                 <div class="modal-section-content">
                                     <p>
-                                        Due to the extremely limited feedback and ambiguous initial requirements, a large portion of our research included analyzing existing successful applications with similar funtionalities. 
-                                        We started by outlining the main functions of the system to estimate what types of users we would expect as well as their main motivations in the system. This resulted in a series of paper prototypes and whiteboard mockups.
-                                        A couple weeks into the project we managed to meet with the sponsors and gain the following information:
+                                        Due to the extremely limited feedback and ambiguous initial requirements, a
+                                        large portion of our research included analyzing existing successful
+                                        applications with similar funtionalities.
+                                        We started by outlining the main functions of the system to estimate what types
+                                        of users we would expect as well as their main motivations in the system. This
+                                        resulted in a series of paper prototypes and whiteboard mockups.
+                                        A couple weeks into the project we managed to meet with the sponsors and gain
+                                        the following information:
                                     </p>
                                     <div class="tile-container">
                                         <div class="tile" style="background-color:#171717">
-                                            Need to support thousands of directories due to the large number of their projects
+                                            Need to support thousands of directories due to the large number of their
+                                            projects
                                         </div>
                                         <div class="tile" style="background-color: #F39237">
-                                            Three different main user motivations. Marketing users download images, admin users manage users and uploading users contribute to the system.
+                                            Three different main user motivations. Marketing users download images,
+                                            admin users manage users and uploading users contribute to the system.
                                         </div>
                                         <div class="tile" style="background-color: #19384B">
-                                            Uploads frequently consist of hundreds of photos, many of which would need to be discarded or edited.
+                                            Uploads frequently consist of hundreds of photos, many of which would need
+                                            to be discarded or edited.
                                         </div>
                                     </div>
+                                </div>
+                            </section>
+                            <section class="modal-section">
+                                <h3>
+                                    Design
+                                </h3>
+                                <hr class="modal-divider">
+                                <div class="modal-section-content">
+                                    <p>
+                                        In an attempt to solve our first problem we took inspiration from Google Drive.
+                                        We believed using a directory browser and smart search feature in parallel would
+                                        allow users to easily find desired photos and projects despite the immense
+                                        number of uploads. Initial mock-ups involved an additional layer of filter by
+                                        displaying viewed content in a table.
+                                    </p>
+                                    <div class="modal-img-container">
+                                        <img class="modal-img" src="../img/ProjectDescriptions/paperProtoTable.jpg">
+
                                     </div>
-                                </section>
-                                    <section class="modal-section">
-                                            <h3>
-                                                Design
-                                            </h3>
-                                            <hr class="modal-divider">
-                                            <div class="modal-section-content">
-                                                        <p>
-                                                            In an attempt to solve our first problem we took inspiration from Google Drive. We believed using a directory browser and smart search feature in parallel would allow users to easily find desired photos and projects despite the immense number of uploads. Initial mock-ups involved an additional layer of filter by displaying viewed content in a table.
-                                                        </p>
-                                                        <div class="modal-img-container">
-                                                                <img class="modal-img" src="../img/ProjectDescriptions/paperProtoTable.jpg">
+                                    <p>
+                                        To accomodate the marketing user needs, we provided uploaders the ability to
+                                        mark images as "marketing ready" when they beleived the photo was high quality.
+                                        This would allow marketing users to filter searches to only high quality photos.
+                                        We also decided to swap our initial table view designs for a grid of large
+                                        thumbnails.
+                                        This would allow marketing users to get a better preview of the images instead
+                                        of having to open each table item individually.
+                                    </p>
+                                    <div class="modal-img-container">
+                                        <img class="modal-img"
+                                            src="../img/ProjectDescriptions/AxureProtoHomeBrowserHighlight.png">
 
-                                                        </div>
-                                                        <p>
-                                                            To accomodate the marketing user needs, we provided uploaders the ability to mark images as "marketing ready" when they beleived the photo was high quality. This would allow marketing users to filter searches to only high quality photos. We also decided to swap our initial table view designs for a grid of large thumbnails.
-                                                            This would allow marketing users to get a better preview of the images instead of having to open each table item individually.  
-                                                        </p>
-                                                        <div class="modal-img-container">
-                                                                <img class="modal-img" src="../img/ProjectDescriptions/AxureProtoHomeBrowserHighlight.png">
+                                    </div>
+                                    <p>
+                                        Due to the large number of uploads, we decided to abstract the system into two
+                                        major components. The initial uploads would be added to one of the user’s
+                                        workbenches in which they could make any desired changes before publishing to
+                                        the public portion of the system. This allowed for a process flow in which users
+                                        could keep track of their work bench progress and return to it over multiple
+                                        sessions.
+                                    </p>
+                                    <div class="modal-img-container">
+                                        <img class="modal-img"
+                                            src="../img/ProjectDescriptions/AxureProtoHomeItemsHighlight.png">
 
-                                                        </div>
-                                                        <p>
-                                                                Due to the large number of uploads, we decided to abstract the system into two major components. The initial uploads would be added to one of the user’s workbenches in which they could make any desired changes before publishing to the public portion of the system. This allowed for a process flow in which users could keep track of their work bench progress and return to it over multiple sessions.
-                                                        </p>
-                                                        <div class="modal-img-container">
-                                                                <img class="modal-img" src="../img/ProjectDescriptions/AxureProtoHomeItemsHighlight.png">
+                                    </div>
+                                </div>
+                            </section>
 
-                                                        </div>
-                                            </div>
-                                            </section>
-                                    
                             <section class="modal-section">
                                 <h3>
                                     Technology
                                 </h3>
                                 <hr class="modal-divider">
                                 <div class="modal-section-content">
-<p>
-        We decided to use React with Prime React UI for some of the components and Redux for our state management of the front-end. The front-end and back-end both used Node.js/Express.js and Passport.js was used for authentication. We used PostgreSQL for our database management and Google Cloud to store all structured data and images. The automatic image classification was complete with Google Cloud Vision API with a Python layer of logic. 
-</p>
+                                    <p>
+                                        We decided to use React with Prime React UI for some of the components and Redux
+                                        for our state management of the front-end. The front-end and back-end both used
+                                        Node.js/Express.js and Passport.js was used for authentication. We used
+                                        PostgreSQL for our database management and Google Cloud to store all structured
+                                        data and images. The automatic image classification was complete with Google
+                                        Cloud Vision API with a Python layer of logic.
+                                    </p>
                                 </div>
                             </section>
                             <section class="modal-section">
-                                    <h3>
-                                        Final Delivery - Smart Search
-                                    </h3>
-                                    <hr class="modal-divider">
-                                    <div class="modal-section-content">
-                                        <p>
-                                            Typing in the search bar will initiate an instant search. Both directories and images will show as results.
-                                        </p>
-                                            <div class="modal-img-container">
-                                                    <img class="modal-img" src="../img/ProjectDescriptions/SmartSearch1.png">
-                                            </div>
-                                            <p>
-                                                Expanding the search bar will open an advanced search. All text entry fields include auto-complete suggestions which create chips when selected.
-                                            </p>
-                                            <div class="modal-img-container">
-                                                    <img class="modal-img" src="../img/ProjectDescriptions/SmartSearch2.png">
-                                            </div>
+                                <h3>
+                                    Final Delivery - Smart Search
+                                </h3>
+                                <hr class="modal-divider">
+                                <div class="modal-section-content">
+                                    <p>
+                                        Typing in the search bar will initiate an instant search. Both directories and
+                                        images will show as results.
+                                    </p>
+                                    <div class="modal-img-container">
+                                        <img class="modal-img" src="../img/ProjectDescriptions/SmartSearch1.png">
                                     </div>
-                                </section>
-                                <section class="modal-section">
-                                        <h3>
-                                            Final Delivery - Editing
-                                        </h3>
-                                        <hr class="modal-divider">
-                                        <div class="modal-section-content">
-                                            <p>
-                                                All images have their initial fields filled by the photo metadata. The image is also classified with a series of tags automatically on the initial upload. 
-                                                Users are able to edit all fields as well as deleting and creating new tags. Multiple images may be selected from the instant search or image previews.
-                                            </p>
-                                                <div class="modal-img-container">
-                                                        <img class="modal-img" src="../img/ProjectDescriptions/EditScreen1.png">
-                                                </div>
-                                                <p>
-                                                    The image is also able to be edited within the system. For the scope of this project only rotating and cropping was included.
-                                                </p>
-                                                <div class="modal-img-container">
-                                                        <img class="modal-img" src="../img/ProjectDescriptions/EditScreen2.png">
-                                                </div>
-                                        </div>
-                                    </section>
-                                    <section class="modal-section">
-                                            <h3>
-                                                Final Delivery - User Submissions
-                                            </h3>
-                                            <hr class="modal-divider">
-                                            <div class="modal-section-content">
-                                                <p>
-                                                    Users have a submission automatically created upon batch image upload. They may also upload to a specific existing submission. The submissions are divided into unpublished and published, indicating whether or not the user has published the submission to the public system. 
-                                                    To aid users in finishing submissions over multiple sessions, images are initially placed under the "in progress" tab. 
-                                                    While editing, users indicate whether an image is "Complete" or an image they wish to discard as "Archived". 
-                                                </p>
-                                                    <div class="modal-img-container">
-                                                            <img class="modal-img" src="../img/ProjectDescriptions/EditScreen1.png">
-                                                    </div>
-                                            </div>
-                                        </section>
+                                    <p>
+                                        Expanding the search bar will open an advanced search. All text entry fields
+                                        include auto-complete suggestions which create chips when selected.
+                                    </p>
+                                    <div class="modal-img-container">
+                                        <img class="modal-img" src="../img/ProjectDescriptions/SmartSearch2.png">
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="modal-section">
+                                <h3>
+                                    Final Delivery - Editing
+                                </h3>
+                                <hr class="modal-divider">
+                                <div class="modal-section-content">
+                                    <p>
+                                        All images have their initial fields filled by the photo metadata. The image is
+                                        also classified with a series of tags automatically on the initial upload.
+                                        Users are able to edit all fields as well as deleting and creating new tags.
+                                        Multiple images may be selected from the instant search or image previews.
+                                    </p>
+                                    <div class="modal-img-container">
+                                        <img class="modal-img" src="../img/ProjectDescriptions/EditScreen1.png">
+                                    </div>
+                                    <p>
+                                        The image is also able to be edited within the system. For the scope of this
+                                        project only rotating and cropping was included.
+                                    </p>
+                                    <div class="modal-img-container">
+                                        <img class="modal-img" src="../img/ProjectDescriptions/EditScreen2.png">
+                                    </div>
+                                </div>
+                            </section>
+                            <section class="modal-section">
+                                <h3>
+                                    Final Delivery - User Submissions
+                                </h3>
+                                <hr class="modal-divider">
+                                <div class="modal-section-content">
+                                    <p>
+                                        Users have a submission automatically created upon batch image upload. They may
+                                        also upload to a specific existing submission. The submissions are divided into
+                                        unpublished and published, indicating whether or not the user has published the
+                                        submission to the public system.
+                                        To aid users in finishing submissions over multiple sessions, images are
+                                        initially placed under the "in progress" tab.
+                                        While editing, users indicate whether an image is "Complete" or an image they
+                                        wish to discard as "Archived".
+                                    </p>
+                                    <div class="modal-img-container">
+                                        <img class="modal-img" src="../img/ProjectDescriptions/EditScreen1.png">
+                                    </div>
+                                </div>
+                            </section>
                             <button>Back to Projects</button>
                     </div>
                     </div>
@@ -249,38 +290,173 @@
 
                 <div class="project-grid-container ">
                     <div class="project-grid-item ">
-                        <img class="project-grid-img " src="../img/ProjectPreviews/imageHubTagScreen.png">
-                        <div class="project-grid-item-details">
-                            <h3 class="project-grid-item-title">ImageHub</h3>
-                            <div class="tag-chip">
-                                tags
-                            </div>
-                            <div class="tag-chip">
-                                tags
-                            </div>
-                            <div class="tag-chip">
-                                tags
-                            </div>
-                            <p>
-                                content
-                            </p>
+                        <div class="project-grid-item-content">
+                            <img class="project-grid-img " src="../img/ProjectPreviews/imageHubTagScreen.png">
+                            <div class="project-grid-item-details">
+                                <h3 class="project-grid-item-title">ImageHub</h3>
+                                <div class="chips">
+                                    <div class="tag-chip">
+                                        UX Research
+                                    </div>
+                                    <div class="tag-chip">
+                                        Prototyping
+                                    </div>
+                                </div>
+                                <p class="item-details-content">
 
-                            <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+                                    Design and coding of an automatic image classifying/hosting system with a six-person team.
+                                </p>
+                                <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+
+                            </div>
                         </div>
                     </div>
                     <div class="project-grid-item ">
-                        <img class="project-grid-img " src="../img/ProjectPreviews/YelpProject.png">
-                        <div class="project-grid-item-overlay "> <button id="resumeButton " class="btn btn-project-grid ">Read More</button>
+                        <div class="project-grid-item-content">
+                            <img class="project-grid-img " src="../img/ProjectPreviews/yelpSearchResults.PNG">
+                            <div class="project-grid-item-details">
+                                <h3 class="project-grid-item-title">Yelp HCI Project</h3>
+                                <div class="chips">
+                                    <div class="tag-chip">
+                                        UX Research
+                                    </div>
+                                    <div class="tag-chip">
+                                        Prototyping
+                                    </div>
+                                </div>
+                                <p class="item-details-content">
+
+                                    Modifying Yelp using a human-centered design approach. Data from the results of many different UX research methods. Paper prototypes, low-fidelity and medium fidelity prototypes created to aid in research.
+                                </p>
+                                <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-grid-item ">
+                        <div class="project-grid-item-content">
+                            <img class="project-grid-img " src="../img/ProjectPreviews/bluemix-invert.jpg">
+                            <div class="project-grid-item-details">
+                                <h3 class="project-grid-item-title">Online Portfolio</h3>
+                                <div class="chips">
+                                    <div class="tag-chip">
+                                        UX Research
+                                    </div>
+                                    <div class="tag-chip">
+                                        Prototyping
+                                    </div>
+                                </div>
+                                <p class="item-details-content">
+
+                                    Online portfolio to showcase some of my projects. Created entirely with pure HTML/JS/CSS to demonstrate web development abilities. No dependencies other than Node.js/Express for hosting.
+                                </p>
+                                <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="project-grid-item ">
+                        <div class="project-grid-item-content">
+                            <img class="project-grid-img " src="../img/ProjectPreviews/captureTheFlag2.jpg">
+                            <div class="project-grid-item-details">
+                                <h3 class="project-grid-item-title">Cellular Automata Project</h3>
+                                <div class="chips">
+                                    <div class="tag-chip">
+                                        UX Research
+                                    </div>
+                                    <div class="tag-chip">
+                                        Prototyping
+                                    </div>
+                                </div>
+                                <p class="item-details-content">
+
+                                    Design and coding of an automatic image classifying/hosting system with a six-person team.
+                                </p>
+                                <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--
+                    <div class="project-grid-item ">
+                        <img class="project-grid-img " src="../img/ProjectPreviews/yelpSearchResults.PNG">
+                        <div class="project-grid-item-details">
+                            <h3 class="project-grid-item-title">Yelp HCI Project</h3>
+                            <div>
+                                <div class="tag-chip">
+                                    UX Research
+                                </div>
+                                <div class="tag-chip">
+                                    Prototyping
+                                </div>
+                            </div>
+
+                            <p>
+                                Modifying Yelp using a human-centered design approach. Data from the results of many different UX research methods. Paper prototypes, low-fidelity and medium fidelity prototypes created to aid in research.
+                            </p>
+
+                        </div>
+                        <div class="project-grid-item-actions">
+                            <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
                         </div>
                     </div>
                     <div class="project-grid-item ">
                         <img class="project-grid-img " src="../img/ProjectPreviews/bluemix-invert.jpg">
-                        <div class="project-grid-item-overlay "></div>
+                        <div class="project-grid-item-details">
+                            <h3 class="project-grid-item-title">Online Portfolio</h3>
+                            <div>
+                                <div class="tag-chip">
+                                    HTML
+                                </div>
+                                <div class="tag-chip">
+                                    JavaScript
+                                </div>
+                                <div class="tag-chip">
+                                    CSS
+                                </div>
+                                <div class="tag-chip">
+                                    Node.js
+                                </div>
+                            </div>
+
+                            <p>
+                                Online portfolio to showcase some of my projects. Created entirely with pure HTML/JS/CSS to demonstrate web development abilities. No dependencies other than Node.js/Express for hosting.
+                            </p>
+
+                        </div>
+                        <div class="project-grid-item-actions">
+                            <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+                        </div>
                     </div>
                     <div class="project-grid-item ">
-                        <img class="project-grid-img " src="../img/ProjectPreviews/captureTheFlag2.jpg">
-                        <div class="project-grid-item-overlay "></div>
+                        <img class="project-grid-img " src="../img/ProjectPreviews/bluemix-invert.jpg">
+                        <div class="project-grid-item-details">
+                            <h3 class="project-grid-item-title">Online Portfolio</h3>
+                            <div>
+                                <div class="tag-chip">
+                                    HTML
+                                </div>
+                                <div class="tag-chip">
+                                    JavaScript
+                                </div>
+                                <div class="tag-chip">
+                                    CSS
+                                </div>
+                                <div class="tag-chip">
+                                    Node.js
+                                </div>
+                            </div>
+
+                            <p>
+                                Online portfolio to showcase some of my projects. Created entirely with pure HTML/JS/CSS to demonstrate web development abilities. No dependencies other than Node.js/Express for hosting.
+                            </p>
+                        </div>
+                        <div class="project-grid-item-actions">
+                            <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+                        </div>
                     </div>
+                    --->
                 </div>
             </section>
 

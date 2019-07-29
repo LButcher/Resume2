@@ -143,7 +143,7 @@ button:focus {
     border-width: 0.25rem;
     border-style: solid;
     border-color: rgb(0, 145, 241);
-    margin: 1.5rem auto 0 auto;
+    margin: 1.5rem auto;
 }
 
 .btn-project-grid:hover {
@@ -260,59 +260,78 @@ section {
 .project-grid-container {
     margin: 4rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: center;
-}
-
-.project-grid-img {
-    max-width: 100%;
-    max-height: 100%;
 }
 
 .project-grid-item {
     margin: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
     transition: 0.3s;
-    position: relative;
-    vertical-align: middle;
-    width: 100%;
-    max-width: 100%;
-    max-height: 100%;
-    display: -ms-flexbox;
-    -ms-box-orient: horizontal;
-    -ms-box-pack: center;
-    -ms-box-align: center;
-    display: -webkit-flex;
-    display: -moz-flex;
-    display: -ms-flex;
-    display: inline-flex;
-    -webkit-flex-flow: row wrap;
-    -moz-flex-flow: row wrap;
-    -ms-flex-flow: row wrap;
-    flex-flow: row wrap;
-    -webkit-justify-content: center;
-    -moz-justify-content: center;
-    -ms-justify-content: center;
-    justify-content: center;
-    -webkit-align-items: center;
-    -moz-align-items: center;
-    -ms-align-items: center;
-    align-items: center;
-    -webkit-align-content: flex-start;
-    -moz-align-content: flex-start;
-    -ms-align-content: flex-start;
-    align-content: flex-start;
+    width: 20%;
+    display: flex;
 }
 
 .project-grid-item:hover {
     box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2);
 }
 
-.project-grid-item-details {
-    width: 100%;
-    margin: 1.5rem;
+@media only screen and (max-width: 1450px) {
+    .project-grid-container {
+        margin: 4rem 2rem;
+    }
+    .project-grid-item {
+        width: 40%;
+    }
 }
 
-.project-grid-item-title {}
+@media only screen and (max-width: 1450px) {
+    .project-grid-container {
+        margin: 4rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .project-grid-container {
+        margin: 4rem 0rem;
+    }
+    .project-grid-item {
+        width: 100%;
+        margin: 1rem;
+    }
+}
+
+.project-grid-img {
+    max-width: 100%;
+    max-height: 100%;
+    position: relative;
+}
+
+.project-grid-item-content {
+    display: flex;
+    flex-direction: column;
+    overflow: hidden;
+}
+
+.project-grid-item-details {
+    display: flex;
+    flex: 1 1 auto;
+    flex-direction: column;
+}
+
+.item-details-content {
+    display: flex;
+    flex: 1 1 auto;
+    margin: 0 1rem;
+}
+
+.project-grid-item-title {
+    margin: 1rem 1rem 0 1rem;
+}
+
+.chips {
+    margin: 0 1rem;
+}
 
 .tag-chip {
     display: inline-block;
@@ -321,87 +340,6 @@ section {
     font-size: 0.8rem;
     border-radius: 1rem;
     background-color: #f1f1f1;
-}
-
-@media only screen and (max-width: 1400px) {
-    .project-grid-container {
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0 0.25rem;
-    }
-    .project-grid-item {
-        width: 40%;
-    }
-}
-
-@media only screen and (max-width: 800px) {
-    .project-grid-container {
-        display: flex;
-        flex-wrap: wrap;
-        padding: 0 0.25rem;
-        margin-left: 1rem;
-        margin-right: 1rem;
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .project-grid-container {
-        display: flex;
-        padding: 0 0.25rem;
-    }
-    .project-grid-item {
-        margin-left: 0;
-        margin-right: 0;
-        width: 100vw;
-    }
-}
-
-.project-grid-item-overlay {
-    opacity: 0;
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    text-align: center;
-}
-
-.project-grid-item-overlay:hover,
-.project-grid-item-overlay:active {
-    opacity: 1;
-    background-color: rgba(53, 52, 59, 0.75);
-}
-
-.project-grid-item-overlay:hover h3 {
-    font-size: 1.5rem;
-    position: relative;
-    color: white;
-    top: 20%;
-    left: 50%;
-    padding-bottom: 1rem;
-    transform: translateX(-50%);
-    animation: slide-down 300ms;
-}
-
-.project-grid-item-overlay:hover h4 {
-    font-size: 1rem;
-    position: relative;
-    color: white;
-    top: 20%;
-    left: 50%;
-    transform: translateX(-50%);
-    animation: slide-down 300ms;
-}
-
-@keyframes slide-down {
-    0% {
-        top: 0%;
-        transform: translate(-50%, -50%);
-    }
-    100% {
-        transform: translateY(-50%, 0%);
-    }
 }
 
 .main-modal {
