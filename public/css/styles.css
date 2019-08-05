@@ -371,12 +371,12 @@ section {
     margin-right: 10vw;
     margin-top: 10vh;
     margin-bottom: 10vh;
-    background-color: rgb(238, 238, 238);
+    background-color: white;
 }
 
 .modal-header {
     width: 80vw;
-    background-color: rgb(238, 238, 238);
+    background-color: white;
     color: black;
     left: 0;
     transform: translate(0);
@@ -433,7 +433,7 @@ section {
 
 .modal-article {
     position: relative;
-    background-color: rgb(238, 238, 238);
+    background-color: white;
     width: 80vw;
     padding: 2rem;
 }
@@ -441,7 +441,7 @@ section {
 @media only screen and (max-width: 800px) {
     .modal-article {
         position: relative;
-        background-color: rgb(238, 238, 238);
+        background-color: white;
         width: 100vw;
         padding: 1rem 0 0 0;
     }
