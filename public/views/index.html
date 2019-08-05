@@ -7,11 +7,12 @@
     <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
     <script src="../js/modalController.js"></script>
+    <script src="../js/navController.js"></script>
     <script src="https://kit.fontawesome.com/10caeb9d25.js"></script>
     <title>Liam Butcher Portfolio</title>
 </head>
 
-<body id="mainBody">
+<body id="mainBody" onload="setModalAnimations()">
 
     <header class="header">
         <div class="header-content">
@@ -285,7 +286,120 @@
                     </div>
                 </template>
                 <!-- End ImageHub Template-->
-
+                <!-- Yelp HCI Template -->
+                <template id="yelpProject-template">
+                        <div class="modal-container">
+                            <div id="yelp" class="modal-header">
+                                <h2 class="modal-header-title">Yelp HCI Research Project</h2>
+                            </div>
+                            <article class="modal-article">
+                                <section class="modal-section">
+                                    <h3>
+                                        About
+                                    </h3>
+                                    <hr class="modal-divider">
+                                    <div class="modal-section-content">
+                                        <p>
+                                                As part of the UBC CPSC 344 course, we were tasked with improving the existing desktop Yelp application in a small group of 4 people over the course of 3 months. After conducting initial user studies using surveys and structured interviews we found strong evidence supporting the need to add a comparison tool within the existing Yelp application. Using this information we iteratively improved upon the proposed tool design before presenting our final medium fidelity prototype and findings to the class.
+                                        </p>
+                                    </div>
+                                </section>
+                                <section class="modal-section">
+                                    <h3>
+                                        UX Research - Pilot Study:
+                                    </h3>
+                                    <hr class="modal-divider">
+                                    <div class="modal-section-content">
+                                        <p>
+                                                Our initial user research was to uncover what users struggled with while using the existing Yelp desktop  web application. To get as much initial data as possible with our limited number of participants, we decided to use a combination of surveys, structured interviews and usage observation as a pilot study.
+                                        </p>
+                                        <p>
+                                                Our initial surveys and structured interviews were to discover what users were most likely to use Yelp for, how often they used it and their feelings around the existing application. With our participants we found that by far the most common usage was finding new restaurants to eat at with a small group of friends. 
+                                        </p>
+                                        <p>
+                                                Using this information, we tasked our next round of participants to find a new restaurant to eat at and asked them to think-aloud while doing so. From this we found that almost every user struggled in some way to compare top restaurant choices. From this pilot study it appeared that narrowing down which restaurant they preferred was the biggest pain point. The two techniques we observed from our participants were:
+                                                1.	Opening interesting restaurants in different tabs to reduce final number of compared restaurants
+                                                2.	Simply remembering which restaurants they’ve seen and deciding based on their favourite over a few minutes of searching
+                                                
+                                        </p>
+                                        <p>
+                                                These techniques and the corresponding questionnaires/interviews led us to believe that narrowing down the top few most attractive results via some comparison method was the issue rather than the sheer number of results displayed in Yelp.
+                                        </p>
+                                    </div>
+                                </section>
+                                <section class="modal-section">
+                                    <h3>
+                                        Initial Prototypes - Design:
+                                    </h3>
+                                    <hr class="modal-divider">
+                                    <div class="modal-section-content">
+                                        <p>
+                                            Due to the extremely limited feedback and ambiguous initial requirements, a
+                                            large portion of our research included analyzing existing successful
+                                            applications with similar funtionalities.
+                                            We started by outlining the main functions of the system to estimate what types
+                                            of users we would expect as well as their main motivations in the system. This
+                                            resulted in a series of paper prototypes and whiteboard mockups.
+                                            A couple weeks into the project we managed to meet with the sponsors and gain
+                                            the following information:
+                                        </p>
+                                        
+                                    </div>
+                                </section>
+                                <section class="modal-section">
+                                        <h3>
+                                            Initial Prototypes - Findings:
+                                        </h3>
+                                        <hr class="modal-divider">
+                                        <div class="modal-section-content">
+                                            <p>
+                                                    We found that users much preferred the approach of adding a comparison tool as an extension to the application instead of redesigning how the result data was displayed. This result was consistent among participants of all levels of Yelp familiarity, including two participants that had not used Yelp before. Most users felt that the amount of information shown in a table view was too overwhelming.
+                                            </p>
+                                            <p>
+                                                    The initial findings were that users found the experience of drag and dropping search results into a comparison tool area as very intuitive and non-intrusive as they were able to opt-in to using the comparison tool. In post-task structured interviews, participants answered that the usage of sticky notes as restaurant results made it obvious that an entire result could be moved into the comparison tool. We worried that on a computer the results would not be obviously draggable, even with instructions in the comparison tool. We felt that perhaps adding a dotted line around each result or showing each result as a card would increase the affordance of dragging.
+</p>                                            
+<p>
+        In post-task interviews we found that the most important criteria when judging restaurants was the atmosphere, price, distance and rating. This criteria was surprisingly consistent across all of the participants. Participants described their perception of atmosphere being based on the uploaded photographs and descriptions in reviews. We found that among the participants that described atmosphere as a major criteria, it was used more to disqualify potential choices rather than to complete a final comparison.  This led us to plan our next prototype with price, distance and rating as default comparison properties as the tool would only compare final choices.
+</p>
+                                        </div>
+                                    </section>
+                                <section class="modal-section">
+                                    <h3>
+                                        Medium Fidelity Prototype Design:
+                                    </h3>
+                                    <hr class="modal-divider">
+                                    <div class="modal-section-content">
+                                        <p>
+                                                We initially planned on creating our medium fidelity prototypes in Axure but realized that it was actually easier to set up a quick web application for the desired functionality. I took the HTML pages and stylesheets on the public facing yelp site and brought in some AngularJS components to create our comparison tool. 
+                                        </p>
+                                        <p>
+                                                As we did not wish to implement their APIs for this quick prototype, we simply created a predefined list of results when a user searched using the prototype. For the comparison tool we restricted the features that were compared to price, rating and distance based on the previous studies we conducted. We were specifically focussed on the efficiency and learnability of the new tool. To test this we used a think-aloud observation study and a pre/post-study questionnaire. 
+                                        </p>
+                                        
+                                    </div>
+                                </section>
+    
+                                <section class="modal-section">
+                                    <h3>
+                                        Medium Fidelity Prototype - Findings:
+                                    </h3>
+                                    <hr class="modal-divider">
+                                    <div class="modal-section-content">
+                                        <p>
+                                                We found that learnability was quite good for the proposed design. Both new users and experienced users were able to find a desired restaurant in similar amounts of time, with familiarity vs. time having R<sup>2</sup>=0.004. 6/8 of the final participants used the comparison tool without prompting with the remaining 2 choosing a restaurant without any form of manual comparison.
+                                        </p>
+                                        <p>
+                                                A common critique found was that users that did use the tool wished to include a larger number of options in the tool as the prototype only included the ability to include two at a time. Overall users were happy with the proposal of a comparison tool and said they would likely use it frequently if it was improved further. 
+                                        </p>
+                                    </div>
+                                </section>
+                                
+                                
+                                <button>Back to Projects</button>
+                        </div>
+                        </div>
+                    </template>
+                <!-- End Yelp HCI Template-->
                 <!-- END TEMPLATES-->
 
                 <div class="project-grid-container ">
@@ -296,15 +410,18 @@
                                 <h3 class="project-grid-item-title">ImageHub</h3>
                                 <div class="chips">
                                     <div class="tag-chip">
-                                        UX Research
+                                        React-Redux
                                     </div>
                                     <div class="tag-chip">
-                                        Prototyping
+                                        REST
+                                    </div>
+                                    <div class="tag-chip">
+                                        JavaScript
                                     </div>
                                 </div>
                                 <p class="item-details-content">
 
-                                    Design and coding of an automatic image classifying/hosting system with a six-person team.
+                                    Design and creation of a large-scale automatic image classifying, editing and hosting system with a six-person team. Business sponsors dictated requirements, including the complete support of IE11.
                                 </p>
                                 <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
 
@@ -315,7 +432,7 @@
                         <div class="project-grid-item-content">
                             <img class="project-grid-img " src="../img/ProjectPreviews/yelpSearchResults.PNG">
                             <div class="project-grid-item-details">
-                                <h3 class="project-grid-item-title">Yelp HCI Project</h3>
+                                <h3 class="project-grid-item-title">Yelp HCI Research Project</h3>
                                 <div class="chips">
                                     <div class="tag-chip">
                                         UX Research
@@ -328,22 +445,25 @@
 
                                     Modifying Yelp using a human-centered design approach. Data from the results of many different UX research methods. Paper prototypes, low-fidelity and medium fidelity prototypes created to aid in research.
                                 </p>
-                                <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+                                <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
 
                             </div>
                         </div>
                     </div>
                     <div class="project-grid-item ">
                         <div class="project-grid-item-content">
-                            <img class="project-grid-img " src="../img/ProjectPreviews/bluemix-invert.jpg">
+                            <img class="project-grid-img " src="../img/ProjectPreviews/OnlinePortfolio.PNG">
                             <div class="project-grid-item-details">
                                 <h3 class="project-grid-item-title">Online Portfolio</h3>
                                 <div class="chips">
                                     <div class="tag-chip">
-                                        UX Research
+                                        HTML
                                     </div>
                                     <div class="tag-chip">
-                                        Prototyping
+                                        JavaScript
+                                    </div>
+                                    <div class="tag-chip">
+                                        CSS
                                     </div>
                                 </div>
                                 <p class="item-details-content">
@@ -359,104 +479,24 @@
                         <div class="project-grid-item-content">
                             <img class="project-grid-img " src="../img/ProjectPreviews/captureTheFlag2.jpg">
                             <div class="project-grid-item-details">
-                                <h3 class="project-grid-item-title">Cellular Automata Project</h3>
+                                <h3 class="project-grid-item-title">Autonomous</h3>
                                 <div class="chips">
                                     <div class="tag-chip">
-                                        UX Research
+                                        Arduino
                                     </div>
                                     <div class="tag-chip">
-                                        Prototyping
+                                        Sensors
                                     </div>
                                 </div>
                                 <p class="item-details-content">
 
-                                    Design and coding of an automatic image classifying/hosting system with a six-person team.
+                                    Design, construction and coding for autonomous maze navigation and capture the flag robots. Built using Arduino, various sensors and lego mindstorm.
                                 </p>
                                 <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
 
                             </div>
                         </div>
                     </div>
-
-                    <!--
-                    <div class="project-grid-item ">
-                        <img class="project-grid-img " src="../img/ProjectPreviews/yelpSearchResults.PNG">
-                        <div class="project-grid-item-details">
-                            <h3 class="project-grid-item-title">Yelp HCI Project</h3>
-                            <div>
-                                <div class="tag-chip">
-                                    UX Research
-                                </div>
-                                <div class="tag-chip">
-                                    Prototyping
-                                </div>
-                            </div>
-
-                            <p>
-                                Modifying Yelp using a human-centered design approach. Data from the results of many different UX research methods. Paper prototypes, low-fidelity and medium fidelity prototypes created to aid in research.
-                            </p>
-
-                        </div>
-                        <div class="project-grid-item-actions">
-                            <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
-                        </div>
-                    </div>
-                    <div class="project-grid-item ">
-                        <img class="project-grid-img " src="../img/ProjectPreviews/bluemix-invert.jpg">
-                        <div class="project-grid-item-details">
-                            <h3 class="project-grid-item-title">Online Portfolio</h3>
-                            <div>
-                                <div class="tag-chip">
-                                    HTML
-                                </div>
-                                <div class="tag-chip">
-                                    JavaScript
-                                </div>
-                                <div class="tag-chip">
-                                    CSS
-                                </div>
-                                <div class="tag-chip">
-                                    Node.js
-                                </div>
-                            </div>
-
-                            <p>
-                                Online portfolio to showcase some of my projects. Created entirely with pure HTML/JS/CSS to demonstrate web development abilities. No dependencies other than Node.js/Express for hosting.
-                            </p>
-
-                        </div>
-                        <div class="project-grid-item-actions">
-                            <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
-                        </div>
-                    </div>
-                    <div class="project-grid-item ">
-                        <img class="project-grid-img " src="../img/ProjectPreviews/bluemix-invert.jpg">
-                        <div class="project-grid-item-details">
-                            <h3 class="project-grid-item-title">Online Portfolio</h3>
-                            <div>
-                                <div class="tag-chip">
-                                    HTML
-                                </div>
-                                <div class="tag-chip">
-                                    JavaScript
-                                </div>
-                                <div class="tag-chip">
-                                    CSS
-                                </div>
-                                <div class="tag-chip">
-                                    Node.js
-                                </div>
-                            </div>
-
-                            <p>
-                                Online portfolio to showcase some of my projects. Created entirely with pure HTML/JS/CSS to demonstrate web development abilities. No dependencies other than Node.js/Express for hosting.
-                            </p>
-                        </div>
-                        <div class="project-grid-item-actions">
-                            <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
-                        </div>
-                    </div>
-                    --->
                 </div>
             </section>
 

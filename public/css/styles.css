@@ -460,6 +460,12 @@ section {
     padding: 0 1rem 1rem 1rem;
 }
 
+@media only screen and (max-width: 600px) {
+    .modal-img-container {
+        padding: 0;
+    }
+}
+
 .modal-img {
     display: block;
     margin: 0 auto;
