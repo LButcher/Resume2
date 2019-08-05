@@ -489,6 +489,56 @@
                         </div>
                     </template>
                 <!-- End Online Portfolio Template-->
+                <!-- Autonomous Robots Template-->
+                <template id="robots-template">
+                            <div class="modal-container">
+                                <div id="imageHub" class="modal-header">
+                                    <h2 class="modal-header-title">Autonomous Robots</h2>
+                                </div>
+                                <article class="modal-article">
+                                    <section class="modal-section">
+                                        <h3>
+                                            About
+                                        </h3>
+                                        <hr class="modal-divider">
+                                        <div class="modal-section-content">
+                                            <p>
+                                                    It's an autonomous robot designed, coded and built by myself and two other students for the lab component of our UBC COGS 300 class. Being autonomous, it has been coded to complete complex goals with only simple actions coded. No human input required.
+                                                    
+                                                    There were two main events that it was created for, maze completion and a capture the flag tournament against the other robots created by our peers. It was able to escape the maze once placed anywhere within the area and able to complete the maze if placed facing the direction of the path to the end. It was also able complete some capture the flag games against the other teams after some small modifications. 
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <section class="modal-section">
+                                        <h3>
+                                            Technology - Maze Robot
+                                        </h3>
+                                        <hr class="modal-divider">
+                                        <div class="modal-section-content">
+                                            <p>
+                                               Powered by an Arduino Uno board, we created the body of the robot using a combination of traditional Lego pieces and Lego Mindstorm motors. To allow it to percieve the environment, we used a number of ultrasonic sensors (HC-SR04) to sense the distance to maze walls.
+                                            </p>
+                                        </div>
+                                    </section>
+                                    <section class="modal-section">
+                                            <h3>
+                                                Technology - Capture the Flag
+                                            </h3>
+                                            <hr class="modal-divider">
+                                            <div class="modal-section-content">
+                                                <p>
+                                                    Similar to the maze robot, we used an Arduino board combined with Lego pieces. However, we upgraded it by adding a color sensor so that it could sense when it was on top of a flag and a servo motor to actually pick up the flags. As it was a competition against the opposing robot, we added some additional features to potentially disable the opposing robot.  
+                                                </p>
+                                            </div>
+                                        </section>
+                                    
+    
+    
+                                    <button>Back to Projects</button>
+                            </div>
+                            </div>
+                        </template>
+                <!-- End Autonomous Robots Template-->
                 <!-- END TEMPLATES-->
 
                 <div class="project-grid-container ">
@@ -581,7 +631,7 @@
 
                                     Design, construction and coding for autonomous maze navigation and capture the flag robots. Built using Arduino, various sensors and lego mindstorm.
                                 </p>
-                                <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+                                <button id="robots" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
 
                             </div>
                         </div>
