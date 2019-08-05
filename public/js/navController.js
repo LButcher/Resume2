@@ -1,3 +1,5 @@
+// Added to scroll event listener in modalController.js
+// Ensures only relevant nav option is underlines
 function setNav() {
 
     const topMargin = 150; //__px from top of window innerheight
@@ -29,10 +31,13 @@ function setNav() {
 
 }
 
+// Set background colour of nav so title text doesn't overlap with the nav options
 function inTitle(scrollY, titleY) {
     return (parseInt(scrollY) < 800 && titleY > 20);
 }
 
+// Scrolls to set section in page. 
+// targetElement will be About, Projects or Contact
 function pageScroll(e, targetElement) {
     e.preventDefault();
     const targetElementId = '#' + targetElement;

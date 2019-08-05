@@ -1,6 +1,7 @@
 let modal = null;
 let hasEventAdded = false;
 
+// Triggered when the "Read More" button is pressed in the projects grid
 function gridButtonPressed(element) {
     try {
         let btn = element.id;
@@ -20,6 +21,7 @@ function modalClicked(event) {
     }
 }
 
+// Disables background scroll so scrolling is only applied to the modal content
 function openModal(btnName) {
 
     const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
