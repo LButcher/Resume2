@@ -4,15 +4,16 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <script src="../js/main.js"></script>
     <script src="../js/modalController.js"></script>
     <script src="../js/navController.js"></script>
     <script src="https://kit.fontawesome.com/10caeb9d25.js"></script>
     <title>Liam Butcher Portfolio</title>
 </head>
 
-<body id="mainBody" onload="setModalAnimations()">
+<body id="mainBody">
 
     <header class="header">
         <div class="header-content">
@@ -475,7 +476,7 @@
                                             With the large number of incredible frameworks, libraries and boostrap templates avaiable today I wanted to show my ability as a front-end engineer and use as few dependencies as possible. 
                                         </p>
                                         <p>
-                                            The entirety of the site is designed and built by me using purely HTML, CSS and JavaScript. This includes the project cards, the navbar and the project modals that you're viewing right now.
+                                            The entirety of the site is designed and built by me using purely HTML, CSS and JavaScript other than a few icons by fontawesome and the Roboto font from Google. This includes the project cards, the navbar and the project modals that you're viewing right now.
                                         </p>
                                         <p>
                                             The site is completely responsive and supported across all popular browsers.
@@ -555,7 +556,7 @@
                 <!-- END TEMPLATES-->
 
                 <div class="project-grid-container ">
-                    <div class="project-grid-item ">
+                    <div id="cpscProjectCard" class="project-grid-item ">
                         <div class="project-grid-item-content">
                             <img class="project-grid-img " src="../img/ProjectPreviews/imageHubTagScreen.png">
                             <div class="project-grid-item-details">
@@ -580,7 +581,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-grid-item ">
+                    <div id="yelpProjectCard" class="project-grid-item ">
                         <div class="project-grid-item-content">
                             <img class="project-grid-img " src="../img/ProjectPreviews/yelpSearchResults.PNG">
                             <div class="project-grid-item-details">
@@ -602,7 +603,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-grid-item ">
+                    <div id="portfolioCard" class="project-grid-item ">
                         <div class="project-grid-item-content">
                             <img class="project-grid-img " src="../img/ProjectPreviews/OnlinePortfolio.PNG">
                             <div class="project-grid-item-details">
@@ -627,7 +628,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="project-grid-item ">
+                    <div id="robotsCard" class="project-grid-item ">
                         <div class="project-grid-item-content">
                             <img class="project-grid-img " src="../img/ProjectPreviews/captureTheFlag2.jpg">
                             <div class="project-grid-item-details">

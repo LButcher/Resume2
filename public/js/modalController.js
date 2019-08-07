@@ -1,20 +1,6 @@
 let modal = null;
 let hasEventAdded = false;
 
-// Triggered when the "Read More" button is pressed in the projects grid
-function gridButtonPressed(element) {
-    try {
-        let btn = element.id;
-        if (!hasEventAdded) {
-            document.querySelector('#main-modal').addEventListener('click', modalClicked);
-            hasEventAdded = true;
-        }
-        openModal(btn);
-    } catch (e) {
-        console.log(e);
-    }
-}
-
 function modalClicked(event) {
     if (event.target.id === 'main-modal') {
         closeModal();
@@ -32,9 +18,14 @@ function openModal(btnName) {
     doc.style.top = `-${scrollY}`;
     modal = document.querySelector('#main-modal');
     modal.style.display = "block";
-    modal.focus();
     let modalTemplate = getTemplate(btnName);
     modal.innerHTML = modalTemplate.innerHTML;
+    // Scroll to the top when opening to prevent scroll persistance across modals
+    modal.scrollTop = 0;
+    modalContainer = document.querySelector('.modal-container');
+    modalContainer.style.display = "block";
+    modal.focus();
+
 }
 
 function closeModal() {
@@ -53,23 +44,3 @@ function getTemplate(id) {
     let templateName = id + '-template';
     return document.querySelector('#' + templateName);
 }
-
-function setModalAnimations() {
-    try {
-        // document.querySelector('.main-modal').style.
-    } catch (e) {
-
-    }
-}
-
-document.addEventListener('keydown', event => {
-    if (event.key == 'Escape' && modal) {
-        closeModal();
-    }
-})
-
-
-window.addEventListener('scroll', () => {
-    document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
-    setNav();
-});

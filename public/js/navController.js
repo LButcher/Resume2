@@ -35,14 +35,3 @@ function setNav() {
 function inTitle(scrollY, titleY) {
     return (parseInt(scrollY) < 800 && titleY > 20);
 }
-
-// Scrolls to set section in page. 
-// targetElement will be About, Projects or Contact
-function pageScroll(e, targetElement) {
-    e.preventDefault();
-    const targetElementId = '#' + targetElement;
-    const elementY = document.querySelector(targetElementId).getBoundingClientRect().top;
-    const navHeight = document.querySelector('nav').getBoundingClientRect().height;
-    const scrollToY = parseInt(elementY) - navHeight;
-    window.scrollBy(0, scrollToY);
-}
