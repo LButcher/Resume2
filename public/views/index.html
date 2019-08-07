@@ -81,11 +81,123 @@
             <section>
                 <div id="main-modal" class="main-modal"></div>
 
-                <!-- TEMPLATES FOR MODAL-->
-                <!-- ImageHub Template-->
-                <template id="cpscProject-template">
+                <div class="project-grid-container ">
+                    <div id="cpscProjectCard" class="project-grid-item ">
+                        <div class="project-grid-item-content">
+                            <img class="project-grid-img " src="../img/ProjectPreviews/imageHubTagScreen.png">
+                            <div class="project-grid-item-details">
+                                <h3 class="project-grid-item-title">ImageHub</h3>
+                                <div class="chips">
+                                    <div class="tag-chip">
+                                        React-Redux
+                                    </div>
+                                    <div class="tag-chip">
+                                        REST
+                                    </div>
+                                    <div class="tag-chip">
+                                        JavaScript
+                                    </div>
+                                </div>
+                                <p class="item-details-content">
+
+                                    Design and creation of a large-scale automatic image classifying, editing and hosting system with a six-person team. Business sponsors dictated requirements, including the complete support of IE11.
+                                </p>
+                                <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="yelpProjectCard" class="project-grid-item ">
+                        <div class="project-grid-item-content">
+                            <img class="project-grid-img " src="../img/ProjectPreviews/yelpSearchResults.PNG">
+                            <div class="project-grid-item-details">
+                                <h3 class="project-grid-item-title">Yelp HCI Research Project</h3>
+                                <div class="chips">
+                                    <div class="tag-chip">
+                                        UX Research
+                                    </div>
+                                    <div class="tag-chip">
+                                        Prototyping
+                                    </div>
+                                </div>
+                                <p class="item-details-content">
+
+                                    Modifying Yelp using a human-centered design approach. Data from the results of many different UX research methods. Paper prototypes, low-fidelity and medium fidelity prototypes created to aid in research.
+                                </p>
+                                <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="portfolioCard" class="project-grid-item ">
+                        <div class="project-grid-item-content">
+                            <img class="project-grid-img " src="../img/ProjectPreviews/OnlinePortfolio.PNG">
+                            <div class="project-grid-item-details">
+                                <h3 class="project-grid-item-title">Online Portfolio</h3>
+                                <div class="chips">
+                                    <div class="tag-chip">
+                                        HTML
+                                    </div>
+                                    <div class="tag-chip">
+                                        JavaScript
+                                    </div>
+                                    <div class="tag-chip">
+                                        CSS
+                                    </div>
+                                </div>
+                                <p class="item-details-content">
+
+                                    Online portfolio to showcase some of my projects. Created entirely with pure HTML/JS/CSS to demonstrate web development abilities. No dependencies other than Node.js/Express for hosting.
+                                </p>
+                                <button id="portfolio" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div id="robotsCard" class="project-grid-item ">
+                        <div class="project-grid-item-content">
+                            <img class="project-grid-img " src="../img/ProjectPreviews/captureTheFlag2.jpg">
+                            <div class="project-grid-item-details">
+                                <h3 class="project-grid-item-title">Autonomous Robots</h3>
+                                <div class="chips">
+                                    <div class="tag-chip">
+                                        Arduino
+                                    </div>
+                                    <div class="tag-chip">
+                                        Sensors
+                                    </div>
+                                </div>
+                                <p class="item-details-content">
+
+                                    Design, construction and coding for autonomous maze navigation and capture the flag robots. Built using Arduino, various sensors and lego mindstorm.
+                                </p>
+                                <button id="robots" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+        </article>
+        <article id="contact">
+            <header>
+                <h1 class="article-title">Contact</h1>
+                <hr>
+            </header>
+            <section>
+
+            </section>
+        </article>
+
+
+    </main>
+
+    <!-- TEMPLATES FOR MODAL-->
+    <!-- ImageHub Template-->
+    <template id="cpscProject-template">
                     <div class="modal-container">
-                        <div id="imageHub" class="modal-header">
+                        <div id="imageHub-header" class="modal-header">
                             <h2 class="modal-header-title">ImageHub</h2>
                         </div>
                         <article class="modal-article">
@@ -286,11 +398,11 @@
                     </div>
                     </div>
                 </template>
-                <!-- End ImageHub Template-->
-                <!-- Yelp HCI Template -->
-                <template id="yelpProject-template">
+    <!-- End ImageHub Template-->
+    <!-- Yelp HCI Template -->
+    <template id="yelpProject-template">
                         <div class="modal-container">
-                            <div id="yelp" class="modal-header">
+                            <div id="yelp-header" class="modal-header">
                                 <h2 class="modal-header-title">Yelp HCI Research Project</h2>
                             </div>
                             <article class="modal-article">
@@ -431,11 +543,11 @@
                         </div>
                         </div>
                     </template>
-                <!-- End Yelp HCI Template-->
-                <!-- Online Portfolio Template-->
-                <template id="portfolio-template">
+    <!-- End Yelp HCI Template-->
+    <!-- Online Portfolio Template-->
+    <template id="portfolio-template">
                         <div class="modal-container">
-                            <div id="imageHub" class="modal-header">
+                            <div id="portfolio-header" class="modal-header">
                                 <h2 class="modal-header-title">Online Portfolio</h2>
                             </div>
                             <article class="modal-article">
@@ -493,11 +605,11 @@
                         </div>
                         </div>
                     </template>
-                <!-- End Online Portfolio Template-->
-                <!-- Autonomous Robots Template-->
-                <template id="robots-template">
+    <!-- End Online Portfolio Template-->
+    <!-- Autonomous Robots Template-->
+    <template id="robots-template">
                             <div class="modal-container">
-                                <div id="imageHub" class="modal-header">
+                                <div id="robots-header" class="modal-header">
                                     <h2 class="modal-header-title">Autonomous Robots</h2>
                                 </div>
                                 <article class="modal-article">
@@ -552,120 +664,8 @@
                             </div>
                             </div>
                         </template>
-                <!-- End Autonomous Robots Template-->
-                <!-- END TEMPLATES-->
-
-                <div class="project-grid-container ">
-                    <div id="cpscProjectCard" class="project-grid-item ">
-                        <div class="project-grid-item-content">
-                            <img class="project-grid-img " src="../img/ProjectPreviews/imageHubTagScreen.png">
-                            <div class="project-grid-item-details">
-                                <h3 class="project-grid-item-title">ImageHub</h3>
-                                <div class="chips">
-                                    <div class="tag-chip">
-                                        React-Redux
-                                    </div>
-                                    <div class="tag-chip">
-                                        REST
-                                    </div>
-                                    <div class="tag-chip">
-                                        JavaScript
-                                    </div>
-                                </div>
-                                <p class="item-details-content">
-
-                                    Design and creation of a large-scale automatic image classifying, editing and hosting system with a six-person team. Business sponsors dictated requirements, including the complete support of IE11.
-                                </p>
-                                <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div id="yelpProjectCard" class="project-grid-item ">
-                        <div class="project-grid-item-content">
-                            <img class="project-grid-img " src="../img/ProjectPreviews/yelpSearchResults.PNG">
-                            <div class="project-grid-item-details">
-                                <h3 class="project-grid-item-title">Yelp HCI Research Project</h3>
-                                <div class="chips">
-                                    <div class="tag-chip">
-                                        UX Research
-                                    </div>
-                                    <div class="tag-chip">
-                                        Prototyping
-                                    </div>
-                                </div>
-                                <p class="item-details-content">
-
-                                    Modifying Yelp using a human-centered design approach. Data from the results of many different UX research methods. Paper prototypes, low-fidelity and medium fidelity prototypes created to aid in research.
-                                </p>
-                                <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div id="portfolioCard" class="project-grid-item ">
-                        <div class="project-grid-item-content">
-                            <img class="project-grid-img " src="../img/ProjectPreviews/OnlinePortfolio.PNG">
-                            <div class="project-grid-item-details">
-                                <h3 class="project-grid-item-title">Online Portfolio</h3>
-                                <div class="chips">
-                                    <div class="tag-chip">
-                                        HTML
-                                    </div>
-                                    <div class="tag-chip">
-                                        JavaScript
-                                    </div>
-                                    <div class="tag-chip">
-                                        CSS
-                                    </div>
-                                </div>
-                                <p class="item-details-content">
-
-                                    Online portfolio to showcase some of my projects. Created entirely with pure HTML/JS/CSS to demonstrate web development abilities. No dependencies other than Node.js/Express for hosting.
-                                </p>
-                                <button id="portfolio" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div id="robotsCard" class="project-grid-item ">
-                        <div class="project-grid-item-content">
-                            <img class="project-grid-img " src="../img/ProjectPreviews/captureTheFlag2.jpg">
-                            <div class="project-grid-item-details">
-                                <h3 class="project-grid-item-title">Autonomous Robots</h3>
-                                <div class="chips">
-                                    <div class="tag-chip">
-                                        Arduino
-                                    </div>
-                                    <div class="tag-chip">
-                                        Sensors
-                                    </div>
-                                </div>
-                                <p class="item-details-content">
-
-                                    Design, construction and coding for autonomous maze navigation and capture the flag robots. Built using Arduino, various sensors and lego mindstorm.
-                                </p>
-                                <button id="robots" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
-
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </section>
-
-        </article>
-        <article id="contact">
-            <header>
-                <h1 class="article-title">Contact</h1>
-                <hr>
-            </header>
-            <section>
-
-            </section>
-        </article>
-
-
-    </main>
+    <!-- End Autonomous Robots Template-->
+    <!-- END TEMPLATES-->
 
 </body>
 

@@ -250,17 +250,6 @@ section {
     justify-content: center;
 }
 
-@keyframes card-entry {
-    0% {
-        transform: translateX(-100%);
-        left: 0;
-    }
-    100% {
-        left: auto;
-        transform: translateX(0);
-    }
-}
-
 .project-grid-item {
     margin: 2rem;
     box-shadow: 0 4px 8px 0 rgba(0, 0, 0, 0.2);
@@ -397,8 +386,23 @@ section {
     justify-content: center;
 }
 
-#imageHub {
+#imageHub-header {
     background-color: #308299;
+    color: white;
+}
+
+#yelp-header {
+    background-color: #d32323;
+    color: white;
+}
+
+#portfolio-header {
+    background-color: #19384B;
+    color: white;
+}
+
+#robots-header {
+    background-color: #F39237;
     color: white;
 }
 

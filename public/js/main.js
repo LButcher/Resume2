@@ -37,7 +37,6 @@ function checkCards() {
         if (currCardPos.top <= window.innerHeight && !card.shown) {
             card.shown = true;
             addRule(card.name, currCard, currCardPos);
-            //currCard.style.animation = 'card-entry 500ms'
         }
     }
 

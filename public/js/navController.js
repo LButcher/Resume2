@@ -16,7 +16,7 @@ function setNav() {
         document.querySelector('#contact-option').style.textDecoration = 'none';
 
     } else {
-        nav.style.backgroundColor = 'black';
+        nav.style.backgroundColor = '#171717';
     }
     if (aboutY <= topMargin && aboutY > 0) {
         document.querySelector('#about-option').style.textDecoration = 'underline';
