@@ -46,6 +46,7 @@ function addRule(cardName, currCard, currCardPos) {
     let left = currCardPos.x;
     let keyFrame = "0%{transform:translateX(-" + left + "px);}";
     document.styleSheets[0].insertRule('@keyframes ' + cardName + '-entry {' + keyFrame + '100%{transform:translateX(0);}}');
+    currCard.style.opacity = 1;
     currCard.style.animation = cardName + '-entry 500ms';
 }
 

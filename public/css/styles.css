@@ -256,6 +256,7 @@ section {
     transition: 0.3s;
     width: 20%;
     display: flex;
+    opacity: 0;
 }
 
 .project-grid-item:hover {
