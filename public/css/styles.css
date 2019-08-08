@@ -285,6 +285,10 @@ section {
 .project-grid-container {
     margin: 4rem;
     display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     flex-wrap: wrap;
     justify-content: center;
 }
@@ -295,6 +299,10 @@ section {
     transition: 0.3s;
     width: 20%;
     display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     opacity: 0;
 }
 
@@ -335,19 +343,45 @@ section {
 
 .project-grid-item-content {
     display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
     overflow: hidden;
 }
 
 .project-grid-item-details {
     display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     flex: 1 1 auto;
+    -webkit-box-flex: 1 1 auto;
+    -moz-box-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
     flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
 }
 
 .item-details-content {
     display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     flex: 1 1 auto;
+    -webkit-box-flex: 1 1 auto;
+    -moz-box-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
     margin: 0 1rem;
 }
 
@@ -422,6 +456,10 @@ section {
     transform: translate(0);
     height: 6rem;
     display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     align-items: center;
     justify-content: center;
 }
@@ -467,6 +505,10 @@ section {
 
 .modal-header-title {
     display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     align-items: center;
     justify-content: center;
 }
@@ -545,6 +587,10 @@ template {
 .tile-container {
     margin: 0.5rem;
     display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
     justify-content: space-around;
 }
 

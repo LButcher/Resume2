@@ -60,8 +60,6 @@ document.addEventListener('keydown', function(event) {
 
 window.addEventListener('scroll', function() {
     document.documentElement.style.setProperty("--scrolltrack", window.pageYOffset + "px");
-    console.log(document.documentElement.style);
-
     setNav();
     checkCards();
 });
