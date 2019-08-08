@@ -5,7 +5,7 @@ function setNav() {
     const topMargin = 150; //__px from top of window innerheight
     const nav = document.querySelector('.main-nav');
     const titleY = document.querySelector('.heading-title').getBoundingClientRect().top;
-    const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+    const scrollY = document.documentElement.style.getPropertyValue("--scrolltrack");
     const aboutY = document.querySelector('#about').getBoundingClientRect().top;
     const projectsY = document.querySelector('#projects').getBoundingClientRect().top;
     const contactY = document.querySelector('#contact').getBoundingClientRect().top;

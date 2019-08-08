@@ -36,7 +36,8 @@
     </header>
 
     <nav class="main-nav">
-        <ul>
+        <input id="navToggle" type="checkbox" class="nav-dropdown fas fa-bars fa-2x" />
+        <ul class="nav-item-container">
             <li id='about-option' class="nav-option">
                 <a id='about-link' href="#about" onclick='pageScroll(event,"about")'>
                     About Me
@@ -102,7 +103,7 @@
 
                                     Design and creation of a large-scale automatic image classifying, editing and hosting system with a six-person team. Business sponsors dictated requirements, including the complete support of IE11.
                                 </p>
-                                <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+                                <button id="cpscProject" onClick='gridButtonPressed(this)' class="btn btn-standard">Read More</button>
 
                             </div>
                         </div>
@@ -124,7 +125,7 @@
 
                                     Modifying Yelp using a human-centered design approach. Data from the results of many different UX research methods. Paper prototypes, low-fidelity and medium fidelity prototypes created to aid in research.
                                 </p>
-                                <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+                                <button id="yelpProject" onClick='gridButtonPressed(this)' class="btn btn-standard">Read More</button>
 
                             </div>
                         </div>
@@ -149,7 +150,7 @@
 
                                     Online portfolio to showcase some of my projects. Created entirely with pure HTML/JS/CSS to demonstrate web development abilities. No dependencies other than Node.js/Express for hosting.
                                 </p>
-                                <button id="portfolio" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+                                <button id="portfolio" onClick='gridButtonPressed(this)' class="btn btn-standard">Read More</button>
 
                             </div>
                         </div>
@@ -171,7 +172,7 @@
 
                                     Design, construction and coding for autonomous maze navigation and capture the flag robots. Built using Arduino, various sensors and lego mindstorm.
                                 </p>
-                                <button id="robots" onClick='gridButtonPressed(this)' class="btn btn-project-grid ">Read More</button>
+                                <button id="robots" onClick='gridButtonPressed(this)' class="btn btn-standard">Read More</button>
 
                             </div>
                         </div>
@@ -206,475 +207,462 @@
 
     <!-- TEMPLATES FOR MODAL-->
     <!-- ImageHub Template-->
-    <template id="cpscProject-template">
-                    <div class="modal-container">
-                        <div id="imageHub-header" class="modal-header">
-                            <h2 class="modal-header-title">ImageHub</h2>
+    <div style="display:none" id="cpscProject-template">
+        <div class="modal-container">
+            <div id="imageHub-header" class="modal-header">
+                <h2 class="modal-header-title">ImageHub</h2>
+                <i onClick="closeModal()" class="fas fa-times modal-close fa-2x"></i>
+
+            </div>
+            <article class="modal-article">
+                <section class="modal-section">
+                    <h3>
+                        About
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            As part of a UBC software engineering course, a large Canadian engineering consulting firm tasked our six-person team to design and build a MVP capable of user-based image hosting, image editing and automatic image classification using computer vision.
+                            Admin and regular users are able to upload batches of images where they then add/edit automatic classification tags, image metadata and simple image editing. The users are then able to publish these batches of images to the
+                            public system where other users are able to view and download.
+                        </p>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        My Role
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            Although each member contributed to the entirety of the system, myself and another student took lead on the UI/UX design, front-end development and REST services.
+                        </p>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Research
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            Due to the extremely limited feedback and ambiguous initial requirements, a large portion of our research included analyzing existing successful applications with similar funtionalities. We started by outlining the main functions of the system to estimate
+                            what types of users we would expect as well as their main motivations in the system. This resulted in a series of paper prototypes and whiteboard mockups. A couple weeks into the project we managed to meet with the sponsors
+                            and gain the following information:
+                        </p>
+                        <div class="tile-container">
+                            <div class="tile" style="background-color:#171717">
+                                Need to support thousands of directories due to the large number of their projects
+                            </div>
+                            <div class="tile" style="background-color: #F39237">
+                                Three different main user motivations. Marketing users download images, admin users manage users and uploading users contribute to the system.
+                            </div>
+                            <div class="tile" style="background-color: #19384B">
+                                Uploads frequently consist of hundreds of photos, many of which would need to be discarded or edited.
+                            </div>
                         </div>
-                        <article class="modal-article">
-                            <section class="modal-section">
-                                <h3>
-                                    About
-                                </h3>
-                                <hr class="modal-divider">
-                                <div class="modal-section-content">
-                                    <p>
-                                        As part of a UBC software engineering course, a large Canadian engineering
-                                        consulting firm tasked our six-person team to
-                                        design and build a MVP capable of user-based image hosting, image editing and
-                                        automatic image classification using computer vision. Admin and regular users
-                                        are able to upload batches of images where they then add/edit automatic
-                                        classification tags, image metadata and simple image editing. The users are then
-                                        able to publish these batches of images to the public system where other users
-                                        are able to view and download.
-                                    </p>
-                                </div>
-                            </section>
-                            <section class="modal-section">
-                                <h3>
-                                    My Role
-                                </h3>
-                                <hr class="modal-divider">
-                                <div class="modal-section-content">
-                                    <p>
-                                        Although each member contributed to the entirety of the system, myself and
-                                        another student took lead on the UI/UX design, front-end development and REST
-                                        services.
-                                    </p>
-                                </div>
-                            </section>
-                            <section class="modal-section">
-                                <h3>
-                                    Research
-                                </h3>
-                                <hr class="modal-divider">
-                                <div class="modal-section-content">
-                                    <p>
-                                        Due to the extremely limited feedback and ambiguous initial requirements, a
-                                        large portion of our research included analyzing existing successful
-                                        applications with similar funtionalities.
-                                        We started by outlining the main functions of the system to estimate what types
-                                        of users we would expect as well as their main motivations in the system. This
-                                        resulted in a series of paper prototypes and whiteboard mockups.
-                                        A couple weeks into the project we managed to meet with the sponsors and gain
-                                        the following information:
-                                    </p>
-                                    <div class="tile-container">
-                                        <div class="tile" style="background-color:#171717">
-                                            Need to support thousands of directories due to the large number of their
-                                            projects
-                                        </div>
-                                        <div class="tile" style="background-color: #F39237">
-                                            Three different main user motivations. Marketing users download images,
-                                            admin users manage users and uploading users contribute to the system.
-                                        </div>
-                                        <div class="tile" style="background-color: #19384B">
-                                            Uploads frequently consist of hundreds of photos, many of which would need
-                                            to be discarded or edited.
-                                        </div>
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="modal-section">
-                                <h3>
-                                    Design
-                                </h3>
-                                <hr class="modal-divider">
-                                <div class="modal-section-content">
-                                    <p>
-                                        In an attempt to solve our first problem we took inspiration from Google Drive.
-                                        We believed using a directory browser and smart search feature in parallel would
-                                        allow users to easily find desired photos and projects despite the immense
-                                        number of uploads. Initial mock-ups involved an additional layer of filter by
-                                        displaying viewed content in a table.
-                                    </p>
-                                    <div class="modal-img-container">
-                                        <img class="modal-img" src="../img/ProjectDescriptions/paperProtoTable.jpg">
-
-                                    </div>
-                                    <p>
-                                        To accomodate the marketing user needs, we provided uploaders the ability to
-                                        mark images as "marketing ready" when they beleived the photo was high quality.
-                                        This would allow marketing users to filter searches to only high quality photos.
-                                        We also decided to swap our initial table view designs for a grid of large
-                                        thumbnails.
-                                        This would allow marketing users to get a better preview of the images instead
-                                        of having to open each table item individually.
-                                    </p>
-                                    <div class="modal-img-container">
-                                        <img class="modal-img"
-                                            src="../img/ProjectDescriptions/AxureProtoHomeBrowserHighlight.png">
-
-                                    </div>
-                                    <p>
-                                        Due to the large number of uploads, we decided to abstract the system into two
-                                        major components. The initial uploads would be added to one of the user’s
-                                        workbenches in which they could make any desired changes before publishing to
-                                        the public portion of the system. This allowed for a process flow in which users
-                                        could keep track of their work bench progress and return to it over multiple
-                                        sessions.
-                                    </p>
-                                    <div class="modal-img-container">
-                                        <img class="modal-img"
-                                            src="../img/ProjectDescriptions/AxureProtoHomeItemsHighlight.png">
-
-                                    </div>
-                                </div>
-                            </section>
-
-                            <section class="modal-section">
-                                <h3>
-                                    Technology
-                                </h3>
-                                <hr class="modal-divider">
-                                <div class="modal-section-content">
-                                    <p>
-                                        We decided to use React with Prime React UI for some of the components and Redux
-                                        for our state management of the front-end. The front-end and back-end both used
-                                        Node.js/Express.js and Passport.js was used for authentication. We used
-                                        PostgreSQL for our database management and Google Cloud to store all structured
-                                        data and images. The automatic image classification was complete with Google
-                                        Cloud Vision API with a Python layer of logic.
-                                    </p>
-                                </div>
-                            </section>
-                            <section class="modal-section">
-                                <h3>
-                                    Final Delivery - Smart Search
-                                </h3>
-                                <hr class="modal-divider">
-                                <div class="modal-section-content">
-                                    <p>
-                                        Typing in the search bar will initiate an instant search. Both directories and
-                                        images will show as results.
-                                    </p>
-                                    <div class="modal-img-container">
-                                        <img class="modal-img" src="../img/ProjectDescriptions/SmartSearch1.png">
-                                    </div>
-                                    <p>
-                                        Expanding the search bar will open an advanced search. All text entry fields
-                                        include auto-complete suggestions which create chips when selected.
-                                    </p>
-                                    <div class="modal-img-container">
-                                        <img class="modal-img" src="../img/ProjectDescriptions/SmartSearch2.png">
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="modal-section">
-                                <h3>
-                                    Final Delivery - Editing
-                                </h3>
-                                <hr class="modal-divider">
-                                <div class="modal-section-content">
-                                    <p>
-                                        All images have their initial fields filled by the photo metadata. The image is
-                                        also classified with a series of tags automatically on the initial upload.
-                                        Users are able to edit all fields as well as deleting and creating new tags.
-                                        Multiple images may be selected from the instant search or image previews.
-                                    </p>
-                                    <div class="modal-img-container">
-                                        <img class="modal-img" src="../img/ProjectDescriptions/EditScreen1.png">
-                                    </div>
-                                    <p>
-                                        The image is also able to be edited within the system. For the scope of this
-                                        project only rotating and cropping was included.
-                                    </p>
-                                    <div class="modal-img-container">
-                                        <img class="modal-img" src="../img/ProjectDescriptions/EditScreen2.png">
-                                    </div>
-                                </div>
-                            </section>
-                            <section class="modal-section">
-                                <h3>
-                                    Final Delivery - User Submissions
-                                </h3>
-                                <hr class="modal-divider">
-                                <div class="modal-section-content">
-                                    <p>
-                                        Users have a submission automatically created upon batch image upload. They may
-                                        also upload to a specific existing submission. The submissions are divided into
-                                        unpublished and published, indicating whether or not the user has published the
-                                        submission to the public system.
-                                        To aid users in finishing submissions over multiple sessions, images are
-                                        initially placed under the "in progress" tab.
-                                        While editing, users indicate whether an image is "Complete" or an image they
-                                        wish to discard as "Archived".
-                                    </p>
-                                    <div class="modal-img-container">
-                                        <img class="modal-img" src="../img/ProjectDescriptions/EditScreen1.png">
-                                    </div>
-                                </div>
-                            </section>
-                            <button>Back to Projects</button>
                     </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Design
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            In an attempt to solve our first problem we took inspiration from Google Drive. We believed using a directory browser and smart search feature in parallel would allow users to easily find desired photos and projects despite the immense number of uploads.
+                            Initial mock-ups involved an additional layer of filter by displaying viewed content in a table.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/paperProtoTable.jpg">
+
+                        </div>
+                        <p>
+                            To accomodate the marketing user needs, we provided uploaders the ability to mark images as "marketing ready" when they beleived the photo was high quality. This would allow marketing users to filter searches to only high quality photos. We also decided
+                            to swap our initial table view designs for a grid of large thumbnails. This would allow marketing users to get a better preview of the images instead of having to open each table item individually.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/AxureProtoHomeBrowserHighlight.png">
+
+                        </div>
+                        <p>
+                            Due to the large number of uploads, we decided to abstract the system into two major components. The initial uploads would be added to one of the user’s workbenches in which they could make any desired changes before publishing to the public portion of
+                            the system. This allowed for a process flow in which users could keep track of their work bench progress and return to it over multiple sessions.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/AxureProtoHomeItemsHighlight.png">
+
+                        </div>
                     </div>
-                </template>
+                </section>
+
+                <section class="modal-section">
+                    <h3>
+                        Technology
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            We decided to use React with Prime React UI for some of the components and Redux for our state management of the front-end. The front-end and back-end both used Node.js/Express.js and Passport.js was used for authentication. We used PostgreSQL for our
+                            database management and Google Cloud to store all structured data and images. The automatic image classification was complete with Google Cloud Vision API with a Python layer of logic.
+                        </p>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Final Delivery - Smart Search
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            Typing in the search bar will initiate an instant search. Both directories and images will show as results.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/SmartSearch1.png">
+                        </div>
+                        <p>
+                            Expanding the search bar will open an advanced search. All text entry fields include auto-complete suggestions which create chips when selected.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/SmartSearch2.png">
+                        </div>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Final Delivery - Editing
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            All images have their initial fields filled by the photo metadata. The image is also classified with a series of tags automatically on the initial upload. Users are able to edit all fields as well as deleting and creating new tags. Multiple images may
+                            be selected from the instant search or image previews.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/EditScreen1.png">
+                        </div>
+                        <p>
+                            The image is also able to be edited within the system. For the scope of this project only rotating and cropping was included.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/EditScreen2.png">
+                        </div>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Final Delivery - User Submissions
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            Users have a submission automatically created upon batch image upload. They may also upload to a specific existing submission. The submissions are divided into unpublished and published, indicating whether or not the user has published the submission
+                            to the public system. To aid users in finishing submissions over multiple sessions, images are initially placed under the "in progress" tab. While editing, users indicate whether an image is "Complete" or an image they wish
+                            to discard as "Archived".
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/EditScreen1.png">
+                        </div>
+                    </div>
+                </section>
+                <button onClick="closeModal()" class="btn btn-standard">Back to Projects</button>
+            </article>
+        </div>
+    </div>
     <!-- End ImageHub Template-->
     <!-- Yelp HCI Template -->
-    <template id="yelpProject-template">
-                        <div class="modal-container">
-                            <div id="yelp-header" class="modal-header">
-                                <h2 class="modal-header-title">Yelp HCI Research Project</h2>
-                            </div>
-                            <article class="modal-article">
-                                <section class="modal-section">
-                                    <h3>
-                                        About
-                                    </h3>
-                                    <hr class="modal-divider">
-                                    <div class="modal-section-content">
-                                        <p>
-                                                As part of the UBC CPSC 344 course, we were tasked with improving the existing desktop Yelp application in a small group of 4 people over the course of 3 months. After conducting initial user studies using surveys and structured interviews we found strong evidence supporting the need to add a comparison tool within the existing Yelp application. Using this information we iteratively improved upon the proposed tool design before presenting our final medium fidelity prototype and findings to the class.
-                                        </p>
-                                    </div>
-                                </section>
-                                <section class="modal-section">
-                                    <h3>
-                                        UX Research - Pilot Study:
-                                    </h3>
-                                    <hr class="modal-divider">
-                                    <div class="modal-section-content">
-                                        <p>
-                                                Our initial user research was to uncover what users struggled with while using the existing Yelp desktop  web application. To get as much initial data as possible with our limited number of participants, we decided to use a combination of questionnaires, structured interviews and usage observation as a pilot study.
-                                        </p>
-                                        <p>
-                                                Our initial questionnaires and structured interviews were to discover what users were most likely to use Yelp for, how often they used it and their feelings around the existing application. With our participants we found that the most common usage was finding new restaurants to eat at with a small group of friends. 
-                                        </p>
-                                        <p>
-                                                Using this information, we tasked our next round of participants to find a new restaurant to eat at and asked them to think-aloud while doing so. From this we found that almost every user struggled in some way to compare top restaurant choices. From this pilot study it appeared that narrowing down which restaurant they preferred was the biggest pain point.  We observed two methods that users employed to reach their final decision. The first method was 
-                                               opening interesting restaurants in different tabs to reduce final number of compared restaurants. The second method we observed was that some users would simply remember which restaurants they've seen and decide based on the best option in their memory.   
-                                        </p>
-                                        <div class="modal-img-container">
-                                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/ComparisonPieChart.PNG">
-                                        </div>
-                                        <p>
-                                                These observed techniques and the corresponding questionnaires/interviews led us to believe that narrowing down the most attractive results via some comparison method would benefit the experience. None of the participants navigated past the first page of results in the pilot study indicating that the comparison would likely only be used to decide between the top few most attractive results. However, we acknowledged that this may not be externally valid due to the participant's desire to use as little effort as possible in a testing scenario.
-                                                
-                                        </p>
-                                    </div>
-                                </section>
-                                <section class="modal-section">
-                                    <h3>
-                                        Initial Prototypes - Design:
-                                    </h3>
-                                    <hr class="modal-divider">
-                                    <div class="modal-section-content">
-                                            <p>
-                                                    To study initial reactions to design proposals, we created a series of quick paper prototypes where we tasked users in finding the most desirable restaurant.
-                                                </p>
-                                        <p>
-                                            To investigate the best way to include comparison functionality on Yelp, we split our team into two sub-groups to pursue different approaches. Myself and another teammate went with the assumption that the pilot study results showed that users were happy with the existing Yelp experience up until choosing their top choice. Due to this, we decided we should add a comparison tool on top of the existing application as our initial approach instead of re-creating the entire results flow. 
-                                        </p>
-                                        <div class="modal-img-container">
-                                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/paperPrototype1.png">
-                                        </div>
-                                        <p>
-                                            In case the existing experience was actually creating the issue of needing a comparison method, we decided the other sub-group would fundamentally change how results were displayed. The initial idea was to display the entirety of the search results as a table to quickly view all the information about the restaurants. 
-                                        </p>
-                                        <div class="modal-img-container">
-                                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/PaperPrototype2.png">
-                                        </div>
-                                        
-                                        
-                                    </div>
-                                </section>
-                                <section class="modal-section">
-                                        <h3>
-                                            Initial Prototypes - Findings:
-                                        </h3>
-                                        <hr class="modal-divider">
-                                        <div class="modal-section-content">
-                                            <p>
-                                                    We found that users much preferred the approach of adding a comparison tool as an extension to the application instead of redesigning how the result data was displayed. This result was consistent among participants of all levels of Yelp familiarity, including two participants that had not used Yelp before. Most users felt that the amount of information shown in a table view was too overwhelming.
-                                            </p>
-                                            <p>
-                                                    The initial findings were that users found the experience of drag and dropping search results into a comparison tool area as very intuitive and non-intrusive as they were able to opt-in to using the comparison tool. In post-task structured interviews, participants answered that the usage of sticky notes as restaurant results made it obvious that an entire result could be moved into the comparison tool. We worried that on a computer the results would not be obviously draggable, even with instructions in the comparison tool. We felt that perhaps adding a dotted line around each result or showing each result as a card would increase the affordance of dragging.
-</p>                                            
-<p>
-        In post-task interviews we found that the most important criteria when judging restaurants was the atmosphere, price, distance and rating. This criteria was surprisingly consistent across all of the participants. Participants described their perception of atmosphere being based on the uploaded photographs and descriptions in reviews. We found that among the participants that described atmosphere as a major criteria, it was used more to disqualify potential choices rather than to complete a final comparison.  This led us to plan our next prototype with price, distance and rating as default comparison properties as the tool would only compare final choices.
-</p>
-                                        </div>
-                                        <p>
-                                            To study initial reactions to these proposals, we created a series of quick paper prototypes where we tasked users in finding the most desirable restaurant.
-                                        </p>
-                                        <div class="modal-img-container">
-                                                <img class="modal-img" src="../img/ProjectDescriptions/Yelp/PaperPrototypeProperties.jpg">
-                                            </div>
-                                    </section>
-                                <section class="modal-section">
-                                    <h3>
-                                        Medium Fidelity Prototype Design:
-                                    </h3>
-                                    <hr class="modal-divider">
-                                    <div class="modal-section-content">
-                                        <p>
-                                                We initially planned on creating our medium fidelity prototypes in Axure but realized that it was actually easier to set up a quick web application for the desired functionality. I took the HTML pages and stylesheets on the public facing yelp site and brought in some AngularJS components to create our comparison tool. 
-                                        </p>
-                                        <div class="modal-img-container">
-                                                <img class="modal-img" src="../img/ProjectDescriptions/Yelp/MedFidelityProtoMainPage.PNG">
-                                            </div>
-                                        <p>
-                                                As we did not wish to implement their APIs for this quick prototype, we simply created a predefined list of results when a user searched using the prototype. For the comparison tool we restricted the features that were compared to price, rating and distance based on the previous studies we conducted. We were specifically focussed on the efficiency and learnability of the new tool. To test this we used a think-aloud observation study and a pre/post-study questionnaire. 
-                                        </p>
-                                        <div class="modal-img-container">
-                                                <img class="modal-img" src="../img/ProjectDescriptions/Yelp/yelpSearchResults.PNG">
-                                            </div>
-                                        
-                                    </div>
-                                </section>
-    
-                                <section class="modal-section">
-                                    <h3>
-                                        Medium Fidelity Prototype - Findings:
-                                    </h3>
-                                    <hr class="modal-divider">
-                                    <div class="modal-section-content">
-                                        <p>
-                                                We found that learnability was quite good for the proposed design. Both new users and experienced users were able to find a desired restaurant in similar amounts of time, with familiarity vs. time having R<sup>2</sup>=0.004. 6/8 of the final participants used the comparison tool without prompting with the remaining 2 choosing a restaurant without any form of manual comparison.
-                                        </p>
-                                        <div class="modal-img-container">
-                                                <img class="modal-img" src="../img/ProjectDescriptions/Yelp/FamiliarityVsDurationGraph.PNG">
-                                            </div>
-                                        <p>
-                                                A common critique found was that users that did use the tool wished to include a larger number of options in the tool as the prototype only included the ability to include two at a time. Overall users were happy with the proposal of a comparison tool and said they would likely use it frequently if it was improved further. 
-                                        </p>
-                                        <p>
-                                            A link to our prototype demo can be found here: 
-                                        
-                                        
-                                    </p>
-                                    <div class="modal-img-container">
-                                            <iframe class="modal-img" width="560" height="315" src="https://www.youtube.com/embed/esdtxnD97J8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
-                                        </div>
-                                    </div>
-                                </section>
-                                
-                                
-                                <button>Back to Projects</button>
+    <div style="display:none" id="yelpProject-template">
+        <div class="modal-container">
+            <div id="yelp-header" class="modal-header">
+                <h2 class="modal-header-title">Yelp HCI Research Project</h2>
+                <i onClick="closeModal()" class="fas fa-times modal-close fa-2x"></i>
+
+            </div>
+            <article class="modal-article">
+                <section class="modal-section">
+                    <h3>
+                        About
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            As part of the UBC CPSC 344 course, we were tasked with improving the existing desktop Yelp application in a small group of 4 people over the course of 3 months. After conducting initial user studies using surveys and structured interviews we found strong
+                            evidence supporting the need to add a comparison tool within the existing Yelp application. Using this information we iteratively improved upon the proposed tool design before presenting our final medium fidelity prototype
+                            and findings to the class.
+                        </p>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        UX Research - Pilot Study:
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            Our initial user research was to uncover what users struggled with while using the existing Yelp desktop web application. To get as much initial data as possible with our limited number of participants, we decided to use a combination of questionnaires,
+                            structured interviews and usage observation as a pilot study.
+                        </p>
+                        <p>
+                            Our initial questionnaires and structured interviews were to discover what users were most likely to use Yelp for, how often they used it and their feelings around the existing application. With our participants we found that the most common usage was
+                            finding new restaurants to eat at with a small group of friends.
+                        </p>
+                        <p>
+                            Using this information, we tasked our next round of participants to find a new restaurant to eat at and asked them to think-aloud while doing so. From this we found that almost every user struggled in some way to compare top restaurant choices. From this
+                            pilot study it appeared that narrowing down which restaurant they preferred was the biggest pain point. We observed two methods that users employed to reach their final decision. The first method was opening interesting restaurants
+                            in different tabs to reduce final number of compared restaurants. The second method we observed was that some users would simply remember which restaurants they've seen and decide based on the best option in their memory.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/ComparisonPieChart.PNG">
                         </div>
+                        <p>
+                            These observed techniques and the corresponding questionnaires/interviews led us to believe that narrowing down the most attractive results via some comparison method would benefit the experience. None of the participants navigated past the first page
+                            of results in the pilot study indicating that the comparison would likely only be used to decide between the top few most attractive results. However, we acknowledged that this may not be externally valid due to the participant's
+                            desire to use as little effort as possible in a testing scenario.
+
+                        </p>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Initial Prototypes - Design:
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            To study initial reactions to design proposals, we created a series of quick paper prototypes where we tasked users in finding the most desirable restaurant.
+                        </p>
+                        <p>
+                            To investigate the best way to include comparison functionality on Yelp, we split our team into two sub-groups to pursue different approaches. Myself and another teammate went with the assumption that the pilot study results showed that users were happy
+                            with the existing Yelp experience up until choosing their top choice. Due to this, we decided we should add a comparison tool on top of the existing application as our initial approach instead of re-creating the entire results
+                            flow.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/paperPrototype1.png">
                         </div>
-                    </template>
+                        <p>
+                            In case the existing experience was actually creating the issue of needing a comparison method, we decided the other sub-group would fundamentally change how results were displayed. The initial idea was to display the entirety of the search results as
+                            a table to quickly view all the information about the restaurants.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/PaperPrototype2.png">
+                        </div>
+
+
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Initial Prototypes - Findings:
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            We found that users much preferred the approach of adding a comparison tool as an extension to the application instead of redesigning how the result data was displayed. This result was consistent among participants of all levels of Yelp familiarity, including
+                            two participants that had not used Yelp before. Most users felt that the amount of information shown in a table view was too overwhelming.
+                        </p>
+                        <p>
+                            The initial findings were that users found the experience of drag and dropping search results into a comparison tool area as very intuitive and non-intrusive as they were able to opt-in to using the comparison tool. In post-task structured interviews,
+                            participants answered that the usage of sticky notes as restaurant results made it obvious that an entire result could be moved into the comparison tool. We worried that on a computer the results would not be obviously draggable,
+                            even with instructions in the comparison tool. We felt that perhaps adding a dotted line around each result or showing each result as a card would increase the affordance of dragging.
+                        </p>
+                        <p>
+                            In post-task interviews we found that the most important criteria when judging restaurants was the atmosphere, price, distance and rating. This criteria was surprisingly consistent across all of the participants. Participants described their perception
+                            of atmosphere being based on the uploaded photographs and descriptions in reviews. We found that among the participants that described atmosphere as a major criteria, it was used more to disqualify potential choices rather
+                            than to complete a final comparison. This led us to plan our next prototype with price, distance and rating as default comparison properties as the tool would only compare final choices.
+                        </p>
+                    </div>
+                    <p>
+                        To study initial reactions to these proposals, we created a series of quick paper prototypes where we tasked users in finding the most desirable restaurant.
+                    </p>
+                    <div class="modal-img-container">
+                        <img class="modal-img" src="../img/ProjectDescriptions/Yelp/PaperPrototypeProperties.jpg">
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Medium Fidelity Prototype Design:
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            We initially planned on creating our medium fidelity prototypes in Axure but realized that it was actually easier to set up a quick web application for the desired functionality. I took the HTML pages and stylesheets on the public facing yelp site and
+                            brought in some AngularJS components to create our comparison tool.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/MedFidelityProtoMainPage.PNG">
+                        </div>
+                        <p>
+                            As we did not wish to implement their APIs for this quick prototype, we simply created a predefined list of results when a user searched using the prototype. For the comparison tool we restricted the features that were compared to price, rating and distance
+                            based on the previous studies we conducted. We were specifically focussed on the efficiency and learnability of the new tool. To test this we used a think-aloud observation study and a pre/post-study questionnaire.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/yelpSearchResults.PNG">
+                        </div>
+
+                    </div>
+                </section>
+
+                <section class="modal-section">
+                    <h3>
+                        Medium Fidelity Prototype - Findings:
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            We found that learnability was quite good for the proposed design. Both new users and experienced users were able to find a desired restaurant in similar amounts of time, with familiarity vs. time having R<sup>2</sup>=0.004.
+                            6/8 of the final participants used the comparison tool without prompting with the remaining 2 choosing a restaurant without any form of manual comparison.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/FamiliarityVsDurationGraph.PNG">
+                        </div>
+                        <p>
+                            A common critique found was that users that did use the tool wished to include a larger number of options in the tool as the prototype only included the ability to include two at a time. Overall users were happy with the proposal of a comparison tool
+                            and said they would likely use it frequently if it was improved further.
+                        </p>
+                        <p>
+                            A link to our prototype demo can be found here:
+
+
+                        </p>
+                        <div class="modal-img-container">
+                            <iframe class="modal-img" width="560" height="315" src="https://www.youtube.com/embed/esdtxnD97J8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </section>
+
+
+                <button onClick="closeModal()" class="btn btn-standard">Back to Projects</button>
+            </article>
+        </div>
+    </div>
     <!-- End Yelp HCI Template-->
     <!-- Online Portfolio Template-->
-    <template id="portfolio-template">
-                        <div class="modal-container">
-                            <div id="portfolio-header" class="modal-header">
-                                <h2 class="modal-header-title">Online Portfolio</h2>
-                            </div>
-                            <article class="modal-article">
-                                <section class="modal-section">
-                                    <h3>
-                                        About
-                                    </h3>
-                                    <hr class="modal-divider">
-                                    <div class="modal-section-content">
-                                        <p>
-                                            This is actually version 2 of my online portfolio. I created the first version a few years ago to showcase my work as a student. 
-                                            To demonstrate my knowledge of web development technologies, I created this online portfolio entirely in HTML, CSS and JavaScript. Other than Node.js and Express for hosting purposes, I use no other frameworks or libraries. All components have been designed and created by me.
-                                        </p>
-                                    </div>
-                                </section>
-                                <section class="modal-section">
-                                    <h3>
-                                        Version 1
-                                    </h3>
-                                    <hr class="modal-divider">
-                                    <div class="modal-section-content">
-                                        <p>
-                                            My first version was started using a boostrap template. As I was learning AngularJS at the time, I decided to modify the template by adding AngularJS material components. The site went through a number of re-designs as I improved upon my web development skills. 
-                                            The final design was similar to this current site but required the user to open the available projects before navigating to the longer descriptions.
-                                        </p>
-                                        <div class="modal-img-container">
-                                                <img class="modal-img" src="../img/ProjectDescriptions/Portfolio/mainFeatures.PNG">
-                                            </div>
-                                    </div>
-                                </section>
-                                <section class="modal-section">
-                                    <h3>
-                                        Version 2 - Current
-                                    </h3>
-                                    <hr class="modal-divider">
-                                    <div class="modal-section-content">
-                                        <p>
-                                            With the large number of incredible frameworks, libraries and boostrap templates avaiable today I wanted to show my ability as a front-end engineer and use as few dependencies as possible. 
-                                        </p>
-                                        <p>
-                                            The entirety of the site is designed and built by me using purely HTML, CSS and JavaScript other than a few icons by fontawesome and the Roboto font from Google. This includes the project cards, the navbar and the project modals that you're viewing right now.
-                                        </p>
-                                        <p>
-                                            The site is completely responsive and supported across all popular browsers.
-                                        </p>
-                                        <p>
-                                            To view the source code, I have it available on GitHub <a href="https://github.com/LButcher/Resume2" target="_blank">here</a>.
-                                        </p>
-                                        
-                                    </div>
-                                </section>
+    <div style="display:none" id="portfolio-template">
+        <div class="modal-container">
+            <div id="portfolio-header" class="modal-header">
+                <h2 class="modal-header-title">Online Portfolio</h2>
+                <i onClick="closeModal()" class="fas fa-times modal-close fa-2x"></i>
+
+            </div>
+            <article class="modal-article">
+                <section class="modal-section">
+                    <h3>
+                        About
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            This is actually version 2 of my online portfolio. I created the first version a few years ago to showcase my work as a student. To demonstrate my knowledge of web development technologies, I created this online portfolio entirely in HTML, CSS and JavaScript.
+                            Other than Node.js and Express for hosting purposes, I use no other frameworks or libraries. All components have been designed and created by me.
+                        </p>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Version 1
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            My first version was started using a boostrap template. As I was learning AngularJS at the time, I decided to modify the template by adding AngularJS material components. The site went through a number of re-designs as I improved upon my web development
+                            skills. The final design was similar to this current site but required the user to open the available projects before navigating to the longer descriptions.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Portfolio/mainFeatures.PNG">
+                        </div>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Version 2 - Current
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            With the large number of incredible frameworks, libraries and boostrap templates avaiable today I wanted to show my ability as a front-end engineer and use as few dependencies as possible.
+                        </p>
+                        <p>
+                            The entirety of the site is designed and built by me using purely HTML, CSS and JavaScript other than a few icons by fontawesome and the Roboto font from Google. This includes the project cards, the navbar and the project modals that you're viewing right
+                            now.
+                        </p>
+                        <p>
+                            The site is completely responsive and supported across all popular browsers.
+                        </p>
+                        <p>
+                            To view the source code, I have it available on GitHub <a href="https://github.com/LButcher/Resume2" target="_blank">here</a>.
+                        </p>
+
+                    </div>
+                </section>
 
 
-                                <button>Back to Projects</button>
-                        </div>
-                        </div>
-                    </template>
+                <button onClick="closeModal()" class="btn btn-standard">Back to Projects</button>
+            </article>
+        </div>
+    </div>
     <!-- End Online Portfolio Template-->
     <!-- Autonomous Robots Template-->
-    <template id="robots-template">
-                            <div class="modal-container">
-                                <div id="robots-header" class="modal-header">
-                                    <h2 class="modal-header-title">Autonomous Robots</h2>
-                                </div>
-                                <article class="modal-article">
-                                    <section class="modal-section">
-                                        <h3>
-                                            About
-                                        </h3>
-                                        <hr class="modal-divider">
-                                        <div class="modal-section-content">
-                                            <p>
-                                                    It's an autonomous robot designed, coded and built by myself and two other students for the lab component of our UBC COGS 300 class. Being autonomous, it has been coded to complete complex goals with only simple actions coded. No human input required.
-                                                    
-                                                    There were two main events that it was created for, maze completion and a capture the flag tournament against the other robots created by our peers. It was able to escape the maze once placed anywhere within the area and able to complete the maze if placed facing the direction of the path to the end. It was also able complete some capture the flag games against the other teams after some small modifications. 
-                                            </p>
-                                            <div class="modal-img-container">
-                                                    <img class="modal-img" src="../img/ProjectDescriptions/Robots/robot1.jpg">
-                                                </div>
-                                        </div>
-                                    </section>
-                                    <section class="modal-section">
-                                        <h3>
-                                            Technology - Maze Robot
-                                        </h3>
-                                        <hr class="modal-divider">
-                                        <div class="modal-section-content">
-                                            <p>
-                                               Powered by an Arduino Uno board, we created the body of the robot using a combination of traditional Lego pieces and Lego Mindstorm motors. To allow it to percieve the environment, we used a number of ultrasonic sensors (HC-SR04) to sense the distance to maze walls.
-                                            </p>
-                                            <div class="modal-img-container">
-                                                    <img class="modal-img" src="../img/ProjectDescriptions/Robots/robotStill.PNG">
-                                                </div>
-                                        </div>
-                                    </section>
-                                    <section class="modal-section">
-                                            <h3>
-                                                Technology - Capture the Flag
-                                            </h3>
-                                            <hr class="modal-divider">
-                                            <div class="modal-section-content">
-                                                <p>
-                                                    Similar to the maze robot, we used an Arduino board combined with Lego pieces. However, we upgraded it by adding a color sensor so that it could sense when it was on top of a flag and a servo motor to actually pick up the flags. As it was a competition against the opposing robot, we added some additional features to potentially disable the opposing robot.  
-                                                </p>
-                                                <div class="modal-img-container">
-                                                        <img class="modal-img" src="../img/ProjectDescriptions/Robots/captureTheFlagRobot.jpg">
-                                                    </div>
-                                            </div>
-                                        </section>
-                                    
-    
-    
-                                    <button>Back to Projects</button>
-                            </div>
-                            </div>
-                        </template>
+    <div style="display:none" id="robots-template">
+        <div class="modal-container">
+            <div id="robots-header" class="modal-header">
+                <h2 class="modal-header-title">Autonomous Robots</h2>
+                <i onClick="closeModal()" class="fas fa-times modal-close fa-2x"></i>
+
+            </div>
+            <article class="modal-article">
+                <section class="modal-section">
+                    <h3>
+                        About
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            It's an autonomous robot designed, coded and built by myself and two other students for the lab component of our UBC COGS 300 class. Being autonomous, it has been coded to complete complex goals with only simple actions coded. No human input required.
+                            There were two main events that it was created for, maze completion and a capture the flag tournament against the other robots created by our peers. It was able to escape the maze once placed anywhere within the area and able
+                            to complete the maze if placed facing the direction of the path to the end. It was also able complete some capture the flag games against the other teams after some small modifications.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Robots/robot1.jpg">
+                        </div>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Technology - Maze Robot
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            Powered by an Arduino Uno board, we created the body of the robot using a combination of traditional Lego pieces and Lego Mindstorm motors. To allow it to percieve the environment, we used a number of ultrasonic sensors (HC-SR04) to sense the distance
+                            to maze walls.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Robots/robotStill.PNG">
+                        </div>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Technology - Capture the Flag
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            Similar to the maze robot, we used an Arduino board combined with Lego pieces. However, we upgraded it by adding a color sensor so that it could sense when it was on top of a flag and a servo motor to actually pick up the flags. As it was a competition
+                            against the opposing robot, we added some additional features to potentially disable the opposing robot.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Robots/captureTheFlagRobot.jpg">
+                        </div>
+                    </div>
+                </section>
+
+
+
+                <button onClick="closeModal()" class="btn btn-standard">Back to Projects</button>
+            </article>
+        </div>
+    </div>
     <!-- End Autonomous Robots Template-->
     <!-- END TEMPLATES-->
 

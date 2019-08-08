@@ -10,12 +10,13 @@ function modalClicked(event) {
 // Disables background scroll so scrolling is only applied to the modal content
 function openModal(btnName) {
 
-    const scrollY = document.documentElement.style.getPropertyValue('--scroll-y');
+    const scrollY = document.documentElement.style.getPropertyValue("--scrolltrack");
+    console.log(scrollY);
     document.querySelector('body').style.position = 'auto';
     document.querySelector('body').style.overflowY = 'scroll';
     const doc = document.querySelector('html');
     doc.style.position = 'fixed';
-    doc.style.top = `-${scrollY}`;
+    doc.style.top = "-" + scrollY;
     modal = document.querySelector('#main-modal');
     modal.style.display = "block";
     let modalTemplate = getTemplate(btnName);
@@ -29,13 +30,13 @@ function openModal(btnName) {
 }
 
 function closeModal() {
-
+    document.querySelector('body').style.overflowY = 'auto';
     const doc = document.querySelector('html');
     const scrollY = doc.style.top;
     doc.style.position = '';
     doc.style.top = '';
     document.querySelector('html').style.scrollBehavior = 'auto';
-    window.scrollTo(0, parseInt(scrollY || '0') * -1);
+    window.scrollTo(0, parseInt(scrollY) * -1);
     document.querySelector('html').style.scrollBehavior = 'smooth';
     modal.style.display = "none";
 }

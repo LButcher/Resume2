@@ -31,12 +31,13 @@ function pageScroll(e, targetElement) {
 }
 
 function checkCards() {
-    for (let card of cards) {
-        let currCard = document.querySelector('#' + card.name);
+    //Traditional for loop for IE11....
+    for (let i = 0; i < cards.length; i++) {
+        let currCard = document.querySelector('#' + cards[i].name);
         let currCardPos = currCard.getBoundingClientRect();
-        if (currCardPos.top <= window.innerHeight && !card.shown) {
-            card.shown = true;
-            addRule(card.name, currCard, currCardPos);
+        if (currCardPos.top <= window.innerHeight && !cards[i].shown) {
+            cards[i].shown = true;
+            addRule(cards[i].name, currCard, currCardPos);
         }
     }
 
@@ -45,20 +46,22 @@ function checkCards() {
 function addRule(cardName, currCard, currCardPos) {
     let left = currCardPos.x;
     let keyFrame = "0%{transform:translateX(-" + left + "px);}";
-    document.styleSheets[0].insertRule('@keyframes ' + cardName + '-entry {' + keyFrame + '100%{transform:translateX(0);}}');
+    document.styleSheets[0].insertRule("@keyframes " + cardName + "-entry {" + keyFrame + "100%{transform:translateX(0);}}", 0);
     currCard.style.opacity = 1;
-    currCard.style.animation = cardName + '-entry 500ms';
+    currCard.style.animation = cardName + "-entry 500ms";
 }
 
-document.addEventListener('keydown', event => {
-    if (event.key == 'Escape' && modal) {
+document.addEventListener('keydown', function(event) {
+    if (event.key == 'Escape' || event.key == 'Esc' && modal) {
         closeModal();
     }
 })
 
 
-window.addEventListener('scroll', () => {
-    document.documentElement.style.setProperty('--scroll-y', `${window.scrollY}px`);
+window.addEventListener('scroll', function() {
+    document.documentElement.style.setProperty("--scrolltrack", window.pageYOffset + "px");
+    console.log(document.documentElement.style);
+
     setNav();
     checkCards();
 });

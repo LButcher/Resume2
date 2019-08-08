@@ -136,7 +136,7 @@ button:focus {
     outline: 0;
 }
 
-.btn-project-grid {
+.btn-standard {
     display: block;
     background-color: transparent;
     color: rgb(0, 145, 241);
@@ -146,12 +146,12 @@ button:focus {
     margin: 1.5rem auto;
 }
 
-.btn-project-grid:hover {
+.btn-standard:hover {
     background-color: rgb(0, 145, 241);
     color: white;
 }
 
-.btn-project-grid:active {
+.btn-standard:active {
     background-color: rgba(38, 48, 72);
     border-color: rgba(38, 48, 72);
 }
@@ -180,15 +180,54 @@ button:focus {
     font-weight: 900;
 }
 
-@media only screen and (max-width: 600px) {
-    .nav-option a {
+input[type=checkbox] {
+    display: none;
+    -webkit-appearance: none;
+    content: "\f0c9";
+    background-color: #171717;
+    height: 3rem;
+}
+
+input[type=checkbox]:focus {
+    outline: 0;
+}
+
+.nav-dropdown {
+    display: none !important;
+    float: right;
+    color: white;
+    height: 2rem;
+    margin: 0.5rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .nav-item-container {
+        opacity: 0;
+        display: none;
+        transition: all 2s;
+    }
+    .nav-dropdown {
+        display: block !important;
+        background-color: white;
+        padding: 0.5rem;
+        cursor: pointer;
+    }
+    #navToggle:checked+.nav-item-container {
         display: block;
-        text-transform: uppercase;
-        text-decoration: none;
+        opacity: 1;
+    }
+    .main-nav {
+        opacity: 1;
+        background-color: #171717 !important;
+    }
+    .nav-option {
+        width: 100%;
+    }
+    .nav-option a {
         color: white;
-        padding: 1rem;
         font-size: 0.8rem;
         font-weight: bold;
+        text-align: right;
     }
 }
 
@@ -432,19 +471,22 @@ section {
     justify-content: center;
 }
 
+.modal-close {
+    margin-right: 2rem;
+    position: absolute;
+    right: 0;
+    opacity: 0.7;
+}
+
+.modal-close:hover {
+    opacity: 1;
+    pointer-events: auto;
+}
+
 .modal-about {
     color: white;
     padding: 1rem;
     font-size: 1rem;
-}
-
-.btn-modal-close {
-    background-color: transparent;
-    border: 0px;
-    color: rgb(80, 80, 80);
-    font-size: 1.5rem;
-    float: right;
-    margin-right: 0.5rem;
 }
 
 .modal-article {
