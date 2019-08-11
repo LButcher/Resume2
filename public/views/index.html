@@ -13,7 +13,7 @@
     <title>Liam Butcher Portfolio</title>
 </head>
 
-<body id="mainBody">
+<body id="mainBody" onload="checkBrowser()">
 
     <header class="header">
         <div class="header-content">
@@ -65,11 +65,34 @@
                 <hr>
             </header>
             <section>
-                <div class="section-text">
-                    <p>
-                        I am a 2019 UBC Cognitive Systems graduate with a passion for innovative technology and the human interaction with it. I combine my interest in design with education in both psychology and computer science to understand the end user and build the relevant,
-                        data-driven solution.
-                    </p>
+                <div class="about-container">
+                    <div id="about-item-1" class="about-item">
+                        <div class="about-item-content">
+                            <i class="fas fa-user-graduate fa-8x"></i>
+                            <p class="about-text">
+                                2019 UBC B.Sc. Cognitive Systems Graduate
+                            </p>
+                        </div>
+                    </div>
+                    <div id="about-item-2" class="about-item">
+                        <div class="about-item-content">
+
+                            <i class="fas fa-microchip fa-8x"></i>
+                            <p class="about-text">
+                                Passion for innovative technology and the human interaction with it
+                            </p>
+                        </div>
+                    </div>
+                    <div id="about-item-3" class="about-item">
+                        <div class="about-item-content">
+
+                            <i class="fas fa-lightbulb fa-8x"></i>
+                            <p class="about-text">
+                                I combine my interest in design with education in both psychology and computer science to understand the end user and build the relevant, data-driven solution
+                            </p>
+                        </div>
+                    </div>
+
                 </div>
             </section>
 
@@ -112,7 +135,7 @@
                         <div class="project-grid-item-content">
                             <img class="project-grid-img " src="../img/ProjectPreviews/yelpSearchResults.PNG">
                             <div class="project-grid-item-details">
-                                <h3 class="project-grid-item-title">Yelp HCI Research Project</h3>
+                                <h3 class="project-grid-item-title">Yelp UX Research Project</h3>
                                 <div class="chips">
                                     <div class="tag-chip">
                                         UX Research
@@ -247,8 +270,10 @@
                     <div class="modal-section-content">
                         <p>
                             Due to the extremely limited feedback and ambiguous initial requirements, a large portion of our research included analyzing existing successful applications with similar funtionalities. We started by outlining the main functions of the system to estimate
-                            what types of users we would expect as well as their main motivations in the system. This resulted in a series of paper prototypes and whiteboard mockups. A couple weeks into the project we managed to meet with the sponsors
-                            and gain the following information:
+                            what types of users we would expect as well as their main motivations in the system. This resulted in a series of paper prototypes and whiteboard mockups.
+                        </p>
+                        <p>
+                            A couple weeks into the project we managed to meet with the sponsors and gain the following information:
                         </p>
                         <div class="tile-container">
                             <div class="tile" style="background-color:#171717">
@@ -374,7 +399,7 @@
     <div style="display:none" id="yelpProject-template">
         <div class="modal-container">
             <div id="yelp-header" class="modal-header">
-                <h2 class="modal-header-title">Yelp HCI Research Project</h2>
+                <h2 class="modal-header-title">Yelp UX Research Project</h2>
                 <i onClick="closeModal()" class="fas fa-times modal-close fa-2x"></i>
 
             </div>

@@ -168,6 +168,7 @@ button:focus {
 
 .nav-option {
     display: inline-block;
+    opacity: 1;
 }
 
 .nav-option a {
@@ -183,7 +184,6 @@ button:focus {
 input[type=checkbox] {
     display: none;
     -webkit-appearance: none;
-    content: "\f0c9";
     background-color: #171717;
     height: 3rem;
 }
@@ -193,7 +193,7 @@ input[type=checkbox]:focus {
 }
 
 .nav-dropdown {
-    display: none !important;
+    /*display: none !important;*/
     float: right;
     color: white;
     height: 2rem;
@@ -202,7 +202,6 @@ input[type=checkbox]:focus {
 
 @media only screen and (max-width: 800px) {
     .nav-item-container {
-        opacity: 0;
         display: none;
         transition: all 2s;
     }
@@ -214,7 +213,6 @@ input[type=checkbox]:focus {
     }
     #navToggle:checked+.nav-item-container {
         display: block;
-        opacity: 1;
     }
     .main-nav {
         opacity: 1;
@@ -237,6 +235,70 @@ input[type=checkbox]:focus {
 
 #about {
     margin-top: 4rem;
+}
+
+.about-container {
+    margin: 2rem;
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex-wrap: wrap;
+    justify-content: center;
+}
+
+.about-item {
+    margin: 2rem;
+    transition: 0.3s;
+    width: 25%;
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    color: #0091f1;
+    opacity: 0;
+}
+
+.about-item-content {
+    display: flex;
+    display: -webkit-box;
+    display: -moz-box;
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    flex: 1 1 auto;
+    -webkit-box-flex: 1 1 auto;
+    -moz-box-flex: 1 1 auto;
+    -webkit-flex: 1 1 auto;
+    -ms-flex: 1 1 auto;
+    flex-direction: column;
+    -webkit-flex-direction: column;
+    -ms-flex-direction: column;
+    -webkit-box-orient: vertical;
+    text-align: center;
+}
+
+.about-text {
+    margin: 1rem;
+    color: black;
+    font-weight: 700;
+}
+
+@media only screen and (max-width: 1450px) {
+    .about-container {
+        margin: 2rem 1rem;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .about-container {
+        margin: 2rem 0rem;
+    }
+    .about-item {
+        width: 100%;
+        margin: 1rem;
+    }
 }
 
 article {
@@ -274,7 +336,7 @@ section {
 
 .section-text {
     position: relative;
-    padding: 4rem;
+    padding: 2rem;
     text-align: center;
     max-width: 1200px;
     display: inline-block;
@@ -283,7 +345,7 @@ section {
 }
 
 .project-grid-container {
-    margin: 4rem;
+    margin: 2rem;
     display: flex;
     display: -webkit-box;
     display: -moz-box;
@@ -304,6 +366,7 @@ section {
     display: -ms-flexbox;
     display: -webkit-flex;
     opacity: 0;
+    /* So it's invisible before it's scrolled to */
 }
 
 .project-grid-item:hover {
@@ -311,23 +374,17 @@ section {
 }
 
 @media only screen and (max-width: 1450px) {
-    .project-grid-container {
-        margin: 4rem 2rem;
-    }
     .project-grid-item {
         width: 40%;
     }
-}
-
-@media only screen and (max-width: 1450px) {
     .project-grid-container {
-        margin: 4rem 1rem;
+        margin: 2rem 1rem;
     }
 }
 
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 800px) {
     .project-grid-container {
-        margin: 4rem 0rem;
+        margin: 2rem 0rem;
     }
     .project-grid-item {
         width: 100%;
@@ -400,6 +457,10 @@ section {
     font-size: 0.8rem;
     border-radius: 1rem;
     background-color: #f1f1f1;
+}
+
+.modal-divider {
+    font-size: 2px;
 }
 
 .main-modal {
@@ -493,13 +554,22 @@ section {
         background-color: rgb(238, 238, 238);
     }
     .modal-header {
-        position: relative;
+        position: fixed;
+        top: 0;
+        z-index: 1;
         width: 100vw;
         background-color: rgb(238, 238, 238);
         color: black;
         left: 0;
         transform: translate(0);
         text-align: center;
+        height: 3.5rem;
+    }
+    .modal-header-title {
+        font-size: 1rem;
+    }
+    .modal-article {
+        top: 3.5rem;
     }
 }
 
@@ -592,13 +662,21 @@ template {
     display: -ms-flexbox;
     display: -webkit-flex;
     justify-content: space-around;
+    flex-wrap: wrap;
 }
 
 .tile {
     margin: 0.5rem;
+    width: 30%;
     position: relative;
     color: white;
     padding: 1rem;
+}
+
+@media only screen and (max-width: 800px) {
+    .tile {
+        width: 100%;
+    }
 }
 
 .contact {
@@ -606,4 +684,9 @@ template {
     text-decoration: none;
     padding-left: 1rem;
     padding-right: 1rem;
+    color: #0091f1;
+}
+
+.contact:hover {
+    color: #0261a0;
 }
