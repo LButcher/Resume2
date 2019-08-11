@@ -12,6 +12,12 @@ let aboutItems = [
 
 ]
 
+let contactItems = [
+    { name: 'contact-mail', shown: false },
+    { name: 'contact-linkedin', shown: false },
+    { name: 'contact-git', shown: false }
+]
+
 function checkBrowser() {
     var ua = window.navigator.userAgent.indexOf("Trident");
     if (ua >= 0) {
@@ -47,39 +53,32 @@ function pageScroll(e, targetElement) {
     window.scrollBy(0, scrollToY);
 }
 
-function checkAboutItems() {
+function checkItems(items) {
+    let threshold = 550;
     //Traditional for loop for IE11....
-    for (let i = 0; i < aboutItems.length; i++) {
-        let currItem = document.querySelector('#' + aboutItems[i].name);
+    for (let i = 0; i < items.length; i++) {
+        let currItem = document.querySelector("#" + items[i].name);
         let currItemPos = currItem.getBoundingClientRect();
-        if (currItemPos.top <= window.innerHeight && !aboutItems[i].shown) {
-            aboutItems[i].shown = true;
-            addRule(aboutItems[i].name, currItem, currItemPos);
-            aboutItems.splice(i, 1);
+        if (currItemPos.top <= window.innerHeight && (currItemPos.bottom + threshold) >= window.innerHeight &&
+            !items[i].shown) {
+            items[i].shown = true;
+            addRule(items[i].name, currItem, currItemPos);
         }
     }
-}
-
-function checkCards() {
-    //Traditional for loop for IE11....
-    for (let i = 0; i < cards.length; i++) {
-        let currCard = document.querySelector('#' + cards[i].name);
-        let currCardPos = currCard.getBoundingClientRect();
-        if (currCardPos.top <= window.innerHeight && !cards[i].shown) {
-            cards[i].shown = true;
-            addRule(cards[i].name, currCard, currCardPos);
-            cards.splice(i, 1);
+    for (let i = 0; i < items.length; i++) {
+        if (items[i].shown) {
+            items.splice(i, 1);
         }
     }
-
 }
 
 function addRule(elementName, currElement, currPos) {
     let left = currPos.x;
     let keyFrame = "0%{transform:translateX(-" + left + "px);}";
     document.styleSheets[0].insertRule("@keyframes " + elementName + "-entry {" + keyFrame + "100%{transform:translateX(0);}}", 0);
-    currElement.style.opacity = 1;
     currElement.style.animation = elementName + "-entry 500ms";
+    currElement.style.opacity = 1;
+
 }
 
 document.addEventListener('keydown', function(event) {
@@ -93,9 +92,12 @@ window.addEventListener('scroll', function() {
     document.documentElement.style.setProperty("--scrolltrack", window.pageYOffset + "px");
     setNav();
     if (cards.length > 0) {
-        checkCards();
+        checkItems(cards);
     }
     if (aboutItems.length > 0) {
-        checkAboutItems();
+        checkItems(aboutItems);
+    }
+    if (contactItems.length > 0) {
+        checkItems(contactItems);
     }
 });
