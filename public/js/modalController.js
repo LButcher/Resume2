@@ -11,7 +11,6 @@ function modalClicked(event) {
 function openModal(btnName) {
 
     const scrollY = document.documentElement.style.getPropertyValue("--scrolltrack");
-    console.log(scrollY);
     document.querySelector('body').style.position = 'auto';
     document.querySelector('body').style.overflowY = 'scroll';
     const doc = document.querySelector('html');

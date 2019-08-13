@@ -237,7 +237,7 @@ input[type=checkbox]:focus {
     margin-top: 4rem;
 }
 
-.about-container {
+.section-container {
     margin: 2rem;
     display: flex;
     display: -webkit-box;
@@ -365,8 +365,8 @@ section {
     display: -moz-box;
     display: -ms-flexbox;
     display: -webkit-flex;
-    opacity: 0;
     /* So it's invisible before it's scrolled to */
+    opacity: 0;
 }
 
 .project-grid-item:hover {
@@ -483,10 +483,11 @@ section {
 
 .modal-container {
     display: none;
-    margin-left: 10vw;
-    margin-right: 10vw;
+    margin-left: 20vw;
+    margin-right: 20vw;
     margin-top: 10vh;
     margin-bottom: 10vh;
+    max-width: 1080px;
     background-color: white;
     animation: modal-enter 300ms;
 }
@@ -510,7 +511,7 @@ section {
 }
 
 .modal-header {
-    width: 80vw;
+    width: 60vw;
     background-color: white;
     color: black;
     left: 0;
@@ -545,34 +546,6 @@ section {
     color: white;
 }
 
-@media only screen and (max-width: 800px) {
-    .modal-container {
-        margin-left: 0;
-        margin-right: 0;
-        margin-top: 0;
-        margin-bottom: 0;
-        background-color: rgb(238, 238, 238);
-    }
-    .modal-header {
-        position: fixed;
-        top: 0;
-        z-index: 1;
-        width: 100vw;
-        background-color: rgb(238, 238, 238);
-        color: black;
-        left: 0;
-        transform: translate(0);
-        text-align: center;
-        height: 3.5rem;
-    }
-    .modal-header-title {
-        font-size: 1rem;
-    }
-    .modal-article {
-        top: 3.5rem;
-    }
-}
-
 .modal-header-title {
     display: flex;
     display: -webkit-box;
@@ -604,17 +577,8 @@ section {
 .modal-article {
     position: relative;
     background-color: white;
-    width: 80vw;
+    width: 60vw;
     padding: 2rem;
-}
-
-@media only screen and (max-width: 800px) {
-    .modal-article {
-        position: relative;
-        background-color: white;
-        width: 100vw;
-        padding: 1rem 0 0 0;
-    }
 }
 
 .modal-section {
@@ -628,6 +592,48 @@ section {
 
 .modal-img-container {
     padding: 0 1rem 1rem 1rem;
+}
+
+@media only screen and (max-width: 1200px) {
+    .modal-container {
+        margin-left: 10vw;
+        margin-right: 10vw;
+        width: 80vw;
+    }
+    .modal-header {
+        width: 80vw;
+    }
+    .modal-article {
+        width: 80vw;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .modal-container {
+        margin-left: 0;
+        margin-right: 0;
+        margin-top: 0;
+        margin-bottom: 0;
+        background-color: rgb(238, 238, 238);
+    }
+    .modal-header {
+        position: fixed;
+        top: 0;
+        z-index: 1;
+        width: 100vw;
+        background-color: rgb(238, 238, 238);
+        color: black;
+        left: 0;
+        transform: translate(0);
+        text-align: center;
+        height: 3.5rem;
+    }
+    .modal-article {
+        position: relative;
+        background-color: white;
+        width: 100vw;
+        padding: 1rem 0 0 0;
+    }
 }
 
 @media only screen and (max-width: 600px) {
@@ -679,12 +685,19 @@ template {
     }
 }
 
+#contact {
+    padding: 4rem 0;
+}
+
 .contact {
     color: inherit;
     text-decoration: none;
     padding-left: 1rem;
     padding-right: 1rem;
     color: #0091f1;
+    /*transition: all 300ms;*/
+    opacity: 0;
+    position: relative;
 }
 
 .contact:hover {

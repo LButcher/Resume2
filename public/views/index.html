@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" type="text/css" href="../css/styles.css">
-    <link href="https://fonts.googleapis.com/css?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="../fonts/googleFont.css">
     <script src="../js/main.js"></script>
     <script src="../js/modalController.js"></script>
     <script src="../js/navController.js"></script>
@@ -65,7 +65,7 @@
                 <hr>
             </header>
             <section>
-                <div class="about-container">
+                <div class="section-container">
                     <div id="about-item-1" class="about-item">
                         <div class="about-item-content">
                             <i class="fas fa-user-graduate fa-8x"></i>
@@ -86,10 +86,9 @@
                     <div id="about-item-3" class="about-item">
                         <div class="about-item-content">
 
-                            <i class="fas fa-lightbulb fa-8x"></i>
+                            <i class="fas fa-code fa-8x"></i>
                             <p class="about-text">
-                                I combine my interest in design with education in both psychology and computer science to understand the end user and build the relevant, data-driven solution
-                            </p>
+                                Combining my interest in design with my education in both psychology and computer science, I aim to understand the end user and build the relevant data-driven solution. </p>
                         </div>
                     </div>
 
@@ -210,14 +209,14 @@
                 <hr>
             </header>
             <section>
-                <div class="section-text">
-                    <a class="contact" href="mailto:liam.butcher@hotmail.com">
+                <div class="section-container">
+                    <a id="contact-mail" class="contact" href="mailto:liam.butcher@hotmail.com">
                         <i class="fa-3x fas fa-envelope"></i>
                     </a>
-                    <a class="contact" href="https://www.linkedin.com/in/liam-butcher/" target="_blank">
+                    <a id="contact-linkedin" class="contact" href="https://www.linkedin.com/in/liam-butcher/" target="_blank">
                         <i class="fa-3x fab fa-linkedin"></i>
                     </a>
-                    <a class="contact" href="https://github.com/LButcher" target="_blank">
+                    <a id="contact-git" class="contact" href="https://github.com/LButcher" target="_blank">
                         <i class="fa-3x fab fa-github"></i>
                     </a>
 
@@ -419,7 +418,7 @@
                 </section>
                 <section class="modal-section">
                     <h3>
-                        UX Research - Pilot Study:
+                        UX Research - Pilot Study
                     </h3>
                     <hr class="modal-divider">
                     <div class="modal-section-content">
@@ -449,7 +448,7 @@
                 </section>
                 <section class="modal-section">
                     <h3>
-                        Initial Prototypes - Design:
+                        Initial Prototypes - Design
                     </h3>
                     <hr class="modal-divider">
                     <div class="modal-section-content">
@@ -477,7 +476,7 @@
                 </section>
                 <section class="modal-section">
                     <h3>
-                        Initial Prototypes - Findings:
+                        Initial Prototypes - Findings
                     </h3>
                     <hr class="modal-divider">
                     <div class="modal-section-content">
@@ -505,7 +504,7 @@
                 </section>
                 <section class="modal-section">
                     <h3>
-                        Medium Fidelity Prototype Design:
+                        Medium Fidelity Prototype Design
                     </h3>
                     <hr class="modal-divider">
                     <div class="modal-section-content">
@@ -514,14 +513,14 @@
                             brought in some AngularJS components to create our comparison tool.
                         </p>
                         <div class="modal-img-container">
-                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/MedFidelityProtoMainPage.PNG">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/MedFidelityProtoMainPage.png">
                         </div>
                         <p>
                             As we did not wish to implement their APIs for this quick prototype, we simply created a predefined list of results when a user searched using the prototype. For the comparison tool we restricted the features that were compared to price, rating and distance
                             based on the previous studies we conducted. We were specifically focussed on the efficiency and learnability of the new tool. To test this we used a think-aloud observation study and a pre/post-study questionnaire.
                         </p>
                         <div class="modal-img-container">
-                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/yelpSearchResults.PNG">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/yelpSearchResults.png">
                         </div>
 
                     </div>
@@ -529,11 +528,12 @@
 
                 <section class="modal-section">
                     <h3>
-                        Medium Fidelity Prototype - Findings:
+                        Medium Fidelity Prototype - Findings
                     </h3>
                     <hr class="modal-divider">
                     <div class="modal-section-content">
                         <p>
+                            We collected a number of data points including Yelp familiarity, Yelp usage behaviours/motivations, reported levels of difficulty, observations from think think-aloud studies and efficiency measured as task completion time and number of interactions.
                             We found that learnability was quite good for the proposed design. Both new users and experienced users were able to find a desired restaurant in similar amounts of time, with familiarity vs. time having R<sup>2</sup>=0.004.
                             6/8 of the final participants used the comparison tool without prompting with the remaining 2 choosing a restaurant without any form of manual comparison.
                         </p>
@@ -551,6 +551,29 @@
                         </p>
                         <div class="modal-img-container">
                             <iframe class="modal-img" width="560" height="315" src="https://www.youtube.com/embed/esdtxnD97J8" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                        </div>
+                    </div>
+                </section>
+                <section class="modal-section">
+                    <h3>
+                        Next Steps
+                    </h3>
+                    <hr class="modal-divider">
+                    <div class="modal-section-content">
+                        <p>
+                            The first iteration with our medium fidelity prototype brought forth a lot of great information. If we were to complete the next iteration we would take the findings in the previous prototype and try our best to continue our data-driven design. Some of
+                            the most important things to change appear to be the display of the comparison tool as well as the flow for using it. With the abundance of empty space on the Yelp results page, it would be interesting to test if it's too overwhelming
+                            to display the entirety of the comparison tool on the side of the page rather than a modal. Now that we've also found that the dotted-lines are more than clear enough in indicating the drag-and-drop ability of the results,
+                            perhaps we could attempt using a slightly less obvious but cleaner representation such as using cards.
+                        </p>
+                        <p>
+                            Below is the potential next iteration design. The first image shows the results page without any interaction and the second image shows a potentially outcome of using the comparison tool.
+                        </p>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/nextYelpIteration1.jpg">
+                        </div>
+                        <div class="modal-img-container">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Yelp/nextYelpIteration2.jpg">
                         </div>
                     </div>
                 </section>
@@ -593,7 +616,7 @@
                             skills. The final design was similar to this current site but required the user to open the available projects before navigating to the longer descriptions.
                         </p>
                         <div class="modal-img-container">
-                            <img class="modal-img" src="../img/ProjectDescriptions/Portfolio/mainFeatures.PNG">
+                            <img class="modal-img" src="../img/ProjectDescriptions/Portfolio/mainFeatures.png">
                         </div>
                     </div>
                 </section>
